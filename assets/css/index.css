@@ -129,3 +129,272 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-50% - 1rem)); }
 }
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 198, 255, 0.1), rgba(0, 114, 255, 0.1));
+    border-radius: 16px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    margin: 3rem 0;
+}
+
+.cta-section h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+    padding: 0.9rem 2.2rem;
+    font-size: 1rem;
+}
+
+/* Como Funciona */
+.como-funciona {
+    padding: 3rem 0;
+}
+
+.titulo-secao {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.funciona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.funciona-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.funciona-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.funciona-numero {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.funciona-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+}
+
+.funciona-item p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Benefícios */
+.beneficios {
+    padding: 3rem 0;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.beneficio-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.beneficio-icon {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.beneficio-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+}
+
+.beneficio-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Requisitos */
+.requisitos {
+    padding: 3rem 0;
+}
+
+.requisitos-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.requisito-bloco {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.requisito-bloco h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: #38bdf8;
+}
+
+.requisito-bloco ul {
+    list-style: none;
+}
+
+.requisito-bloco li {
+    color: var(--text-muted);
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Footer Melhorado */
+footer {
+    background: rgba(7, 11, 21, 0.95);
+    border-top: 1px solid var(--card-border);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #f0f4f8;
+}
+
+.footer-section p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #38bdf8;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--card-border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-bottom p {
+    margin: 0.3rem 0;
+}
+
+/* Responsivo */
+@media (max-width: 680px) {
+    .cta-section {
+        padding: 2.5rem 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .cta-buttons {
+        gap: 0.8rem;
+    }
+
+    .cta-buttons .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .funciona-grid,
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .funciona-item,
+    .beneficio-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .titulo-secao {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem 1.5rem;
+    }
+}
