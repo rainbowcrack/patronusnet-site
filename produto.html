@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | PatronusNet</title>
+    <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/produto.css">
+</head>
+<body>
+
+    <canvas id="canvas-grafos"></canvas>
+
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo-txt">
+                <img src="assets/img/favi-icon.png" alt="PatronusNet Ícone" class="logo-icon">
+                PatronusNet
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="produto.html" class="active">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="titulo-secao">Nossos Planos</h2>
+        <p class="subtitulo-secao">Escolha a escala ideal de proteção e monitoria para sua aplicação</p>
+        
+        <section class="grid-planos">
+            <div class="card card-plano">
+                <div>
+                    <h3>Plano Core</h3>
+                    <div class="plano-preco">Grátis</div>
+                    <ul class="recursos-lista">
+                        <li>Acesso à extensão base</li>
+                        <li>Monitoramento local básico</li>
+                        <li>Filtros estruturais padrão</li>
+                    </ul>
+                </div>
+                <a href="code/patronus.zip" download class="btn btn-secondary" style="text-align: center;">Baixar Extensão (.zip)</a>
+            </div>
+
+            <div class="card card-plano destaque">
+                <span class="badge">Em Breve</span>
+                <div>
+                    <h3>Plano Advanced</h3>
+                    <div class="plano-preco">-- <span>/ mês</span></div>
+                    <ul class="recursos-lista">
+                        <li>Painel em nuvem centralizado</li>
+                        <li>Inteligência Artificial preditiva</li>
+                        <li>Relatórios em tempo real por e-mail</li>
+                        <li>Suporte prioritário 24/7</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" disabled style="opacity: 0.6; cursor: not-allowed;">Mais informações em breve</button>
+            </div>
+        </section>
+
+        <section class="tutorial-instalacao">
+            <h2 class="titulo-secao">Como Instalar a Extensão</h2>
+            <p class="subtitulo-secao">Siga o guia rápido para carregar o PatronusNet manualmente no seu Google Chrome</p>
+
+            <div class="tutorial-grid">
+                <div class="tutorial-step">
+                    <div class="step-num step-1">01</div>
+                    <div class="step-info">
+                        <h4>Extraia o arquivo baixado</h4>
+                        <p>Após concluir o download do arquivo <code>patronusnet.zip</code>, extraia o conteúdo para uma pasta de fácil acesso no seu computador (como a Área de Trabalho).</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="step-num step-2">02</div>
+                    <div class="step-info">
+                        <h4>Abra o menu de Extensões</h4>
+                        <p>No canto superior direito do Google Chrome, clique no ícone de quebra-cabeça e selecione <strong>"Gerenciar extensões"</strong>. Se preferir, digite <code>chrome://extensions</code> na barra de endereços.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="step-num step-3">03</div>
+                    <div class="step-info">
+                        <h4>Acesse o painel principal</h4>
+                        <p>Certifique-se de que você está na aba de gerenciamento principal de suas extensões instaladas no navegador.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="step-num step-4">04</div>
+                    <div class="step-info">
+                        <h4>Ative o Modo do Desenvolvedor</h4>
+                        <p>No canto superior direito da página de extensões, localize a chave seletora do <strong>"Modo do desenvolvedor"</strong> e clique para ativá-la.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="step-num step-5">05</div>
+                    <div class="step-info">
+                        <h4>Carregar sem compactação</h4>
+                        <p>Um novo menu surgirá. Clique no botão <strong>"Carregar sem compactação"</strong> no canto esquerdo superior e selecione a pasta que você extraiu no Passo 1. Pronto, o PatronusNet já estará ativo!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> PatronusNet. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-color: #0a0f1d;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-color: #f0f4f8;
+    --text-muted: #a0aec0;
+    --grad-primary: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    --grad-text: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 100%);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Canvas de Grafos no Fundo */
+#canvas-grafos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4; /* Leve e não cansativo */
+}
+
+/* Header e Navegação */
+header {
+    background: rgba(10, 15, 29, 0.8);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.logo-txt {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #38bdf8;
+}
+
+/* Conteúdo Base */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+}
+
+/* Footer */
+footer {
+    background: rgba(7, 11, 21, 0.9);
+    border-top: 1px solid var(--card-border);
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Componentes Comuns: Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(6px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--grad-primary);
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--card-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.logo-txt {
+    display: inline-flex;  
+    align-items: center;   
+    gap: 0.5em;            
+    text-decoration: none;
+    white-space: nowrap;   
+}
+
+.logo-icon {
+    height: 1.2em;
+    width: auto;
+    max-height: 100%;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+    .nav-container {
+        padding: 1rem 1.2rem;
+    }
+
+    .nav-links {
+        gap: 0.9rem;
+    }
+
+    main {
+        padding: 2rem 1.2rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .nav-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo-txt {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.75rem 0;
+    }
+
+    .nav-container {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-links {
+        gap: 0.75rem;
+    }
+
+    main {
+        padding: 1.25rem 0.9rem;
+    }
+
+    footer {
+        font-size: 0.82rem;
+        padding: 1rem 0.8rem;
+    }
+}

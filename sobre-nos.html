@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós | PatronusNet</title>
+    <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sobre-nos.css">
+</head>
+<body>
+
+    <canvas id="canvas-grafos"></canvas>
+
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo-txt">
+                <img src="assets/img/favi-icon.png" alt="PatronusNet Ícone" class="logo-icon">
+                PatronusNet
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html" class="active">Sobre Nós</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="titulo-secao">Quem Somos</h2>
+        
+        <section class="grid-equipe">
+            <div class="card card-membro">
+                <div class="avatar-container">
+                    <img src="assets/img/avatar/izabel-chaves.png" alt="Izabel Chaves" class="avatar-img">
+                </div>
+                <h3>Izabel Chaves</h3>
+                <div class="cargo">Discente de computação | PUC Minas</div>
+                <p>Responsável pelo design de interface, pesquisa de experiência do usuário e construção das telas de controle de acesso.</p>
+                <div class="membro-acoes">
+                    <a href="#" class="btn btn-icon" title="Lattes" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/lattes.png" alt="Lattes">
+                    </a>
+                    <a href="#" class="btn btn-icon" title="ORCID" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/orcid.png" alt="ORCID">
+                    </a>
+                    <a href="#" class="btn btn-icon" title="GitHub" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/github.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+
+            <div class="card card-membro">
+                <div class="avatar-container">
+                    <img src="assets/img/avatar/matheus-coxir.png" alt="Matheus Coxir" class="avatar-img">
+                </div>
+                <h3>Matheus Coxir</h3>
+                <div class="cargo">Discente de computação | PUC Minas</div>
+                <p>Atua no desenvolvimento do processamento de rede, filtragem de conteúdos e integração dos módulos de proteção.</p>
+                <div class="membro-acoes">
+                    <a href="#" class="btn btn-icon" title="Lattes" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/lattes.png" alt="Lattes">
+                    </a>
+                    <a href="#" class="btn btn-icon" title="ORCID" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/orcid.png" alt="ORCID">
+                    </a>
+                    <a href="#" class="btn btn-icon" title="GitHub" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/github.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+
+            <div class="card card-membro">
+                <div class="avatar-container">
+                    <img src="assets/img/avatar/humberto-marques.png" alt="Humberto Marques" class="avatar-img">
+                </div>
+                <h3>Humberto Marques</h3>
+                <div class="cargo">Professor Orientador | PUC Minas</div>
+                <p>Professor orientador e supervisor técnico, responsável pelo acompanhamento acadêmico e validação do projeto.</p>
+                <div class="membro-acoes">
+                    <a href="#" class="btn btn-icon" title="Lattes" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/lattes.png" alt="Lattes">
+                    </a>
+                    <a href="#" class="btn btn-icon" title="ORCID" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/orcid.png" alt="ORCID">
+                    </a>
+                    <a href="#" class="btn btn-icon" title="GitHub" target="_blank" rel="noreferrer">
+                        <img src="assets/img/icons/github.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> PatronusNet. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>

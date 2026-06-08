@@ -1,0 +1,126 @@
+.titulo-secao {
+    text-align: center;
+    font-size: clamp(2.3rem, 5vw, 2.8rem);
+    margin-bottom: 2rem;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grid-equipe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-membro {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+.avatar-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.2);
+    background: var(--grad-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-membro h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.card-membro .cargo {
+    color: #38bdf8;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-membro p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.membro-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn.btn-icon {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn.btn-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.btn.btn-icon:hover {
+    transform: translateY(-2px);
+    background: rgba(56, 189, 248, 0.18);
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+@media (max-width: 680px) {
+    .titulo-secao {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-membro {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .avatar-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 520px) {
+    .titulo-secao {
+        font-size: 2rem;
+    }
+
+    .card-membro h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-membro .cargo {
+        font-size: 0.9rem;
+    }
+}

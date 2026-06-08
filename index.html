@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | PatronusNet</title>
+    <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+
+    <canvas id="canvas-grafos"></canvas>
+
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo-txt">
+                <img src="assets/img/favi-icon.png" alt="PatronusNet Ícone" class="logo-icon">
+                PatronusNet
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="assets/img/logo.png" alt="Patronus Logo" class="logo-img">
+            <h1>PatronusNet</h1>
+            <p>Assim como o urso protege seu filhote, o PatronusNet acompanha e monitora as atividades online dos dispositivos, promovendo um ambiente digital mais seguro, responsável e sob controle.</p>
+        </section>
+
+        <section class="carrossel-container">
+            <div class="carrossel-trilha">
+                <div class="card card-carrossel">
+                    <img src="assets/img/logo.png" alt="Módulo Roteador">
+                    <h3>Módulo Roteador</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Assistente de configuração que orienta o usuário passo a passo, permitindo definir o DNS da rede e aplicar automaticamente regras de proteção e controle para todos os dispositivos conectados.</p>
+                </div>
+                <div class="card card-carrossel">
+                    <img src="assets/img/logo.png" alt="Módulo Histórico">
+                    <h3>Módulo Histórico</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Permite navegação guiada do roteador para configuração do roteador, com isso definir o DNS global da rede e restrição a todos os dispositivos conectados de forma automática.</p>
+                </div>
+                <div class="card card-carrossel">
+                    <img src="assets/img/logo.png" alt="Módulo Tags de Conteúdo">
+                    <h3>Módulo Tags de Conteúdo</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Realiza o bloqueio automático de páginas, vídeos e resultados de pesquisa que contenham palavras-chave definidas previamente, garantindo maior controle sobre o conteúdo acessado.</p>
+                </div>
+                <div class="card card-carrossel">
+                    <img src="assets/img/image.png" alt="Módulo Bloqueio de Domínios">
+                    <h3>Módulo Bloqueio de Domínios</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Restringe o acesso a domínios específicos e a sites classificados como inadequados pelas listas de segurança da plataforma.</p>
+                </div>
+                <div class="card card-carrossel">
+                    <img src="assets/img/logo.png" alt="Módulo Senha de Acesso">
+                    <h3>Módulo Senha de Acesso</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Permite definir e gerenciar senhas de acesso ao roteador, garantindo que apenas usuários autorizados possam realizar alterações na configuração da rede.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> PatronusNet. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>

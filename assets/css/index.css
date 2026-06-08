@@ -1,0 +1,131 @@
+.hero {
+    text-align: center;
+    padding: 4rem 1rem 5rem;
+}
+
+.logo-img {
+    max-width: 200px;
+    width: min(220px, 40vw);
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 20px rgba(0, 198, 255, 0.18));
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    line-height: 1.05;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.75;
+}
+
+.carrossel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0 3rem;
+    position: relative;
+}
+
+.carrossel-container::before,
+.carrossel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carrossel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-color), transparent);
+}
+
+.carrossel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-color), transparent);
+}
+
+.carrossel-trilha {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: rolarCarrossel 25s linear infinite;
+    padding-inline: 2rem;
+}
+
+.carrossel-trilha:hover {
+    animation-play-state: paused;
+}
+
+.card-carrossel {
+    width: 280px;
+    min-width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-carrossel img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: #1e293b;
+}
+
+.card-carrossel h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.65rem;
+}
+
+.card-carrossel p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 920px) {
+    .carrossel-trilha {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding-inline: 1rem;
+    }
+
+    .carrossel-container::before,
+    .carrossel-container::after {
+        display: none;
+    }
+}
+
+@media (max-width: 680px) {
+    .hero {
+        padding: 3rem 1rem 4rem;
+    }
+
+    .carrossel-container {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .card-carrossel {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@keyframes rolarCarrossel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
+}
