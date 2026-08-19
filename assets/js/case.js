@@ -1,39 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const canvas = document.getElementById("productCanvas");
+    /* =====================================================
+       CONFIGURAÇÕES
+    ===================================================== */
 
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-
-    const currentElement =
-        document.getElementById("sequenceCurrent");
-
-    const totalElement =
-        document.getElementById("sequenceTotal");
-
-    const materialButtons =
-        document.querySelectorAll(".material-btn");
-
+    const TOTAL_FRAMES = 7;
 
     const materials = {
         plastic: {
-            path: "assets/img/case/plastic/",
+            name: "Plástico",
+
             price: "R$ 149,90",
-            description: "Dispositivo em plástico"
+
+            description: "Dispositivo em plástico",
+
+            folder: "assets/img/case/plastic/"
         },
 
         wood: {
-            path: "assets/img/case/wood/",
+            name: "Madeira",
+
+            // Por enquanto mantém o mesmo preço.
+            // Quando houver o preço da madeira, basta alterar aqui.
             price: "R$ 129,90",
-            description: "Dispositivo em madeira"
+
+            description: "Dispositivo em madeira",
+
+            folder: "assets/img/case/wood/"
         }
     };
 
 
-    const totalFrames = 7;
-
-    let material = "plastic";
+    let currentMaterial = "plastic";
 
     let currentFrame = 1;
 
@@ -41,22 +39,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let loadedImages = 0;
 
+    let canvas;
+
+    let ctx;
+
+    let animationFrame = null;
+
+    let lastScrollY = window.scrollY;
+
+    let scrollVelocity = 0;
+
+
 
     /* =====================================================
-       CANVAS
-    ====================================================== */
+       ELEMENTOS
+    ===================================================== */
+
+    const materialButtons =
+        document.querySelectorAll(".material-btn");
+
+    const priceElement =
+        document.getElementById("productPrice");
+
+    const descriptionElement =
+        document.getElementById("productDescription");
+
+    const currentElement =
+        document.getElementById("sequenceCurrent");
+
+    const totalElement =
+        document.getElementById("sequenceTotal");
+
+    canvas =
+        document.getElementById("productCanvas");
+
+
+    if (!canvas) {
+        return;
+    }
+
+
+    ctx = canvas.getContext("2d");
+
+
+    if (totalElement) {
+        totalElement.textContent =
+            String(TOTAL_FRAMES).padStart(2, "0");
+    }
+
+
+
+    /* =====================================================
+       RESIZE DO CANVAS
+    ===================================================== */
 
     function resizeCanvas() {
 
-        const rect = canvas.getBoundingClientRect();
+        const rect =
+            canvas.getBoundingClientRect();
 
-        const dpr = Math.min(
-            window.devicePixelRatio || 1,
-            2
-        );
+        const dpr =
+            Math.min(window.devicePixelRatio || 1, 2);
 
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
+        canvas.width =
+            Math.max(1, Math.floor(rect.width * dpr));
+
+        canvas.height =
+            Math.max(1, Math.floor(rect.height * dpr));
 
         ctx.setTransform(
             dpr,
@@ -67,82 +116,115 @@ document.addEventListener("DOMContentLoaded", () => {
             0
         );
 
-        drawFrame();
+        drawCurrentFrame();
     }
+
 
 
     /* =====================================================
        CARREGAR IMAGENS
-    ====================================================== */
+    ===================================================== */
 
-    function loadImages() {
+    function loadImages(material) {
 
         images = [];
 
         loadedImages = 0;
 
-        for (let i = 1; i <= totalFrames; i++) {
+        for (let i = 1; i <= TOTAL_FRAMES; i++) {
 
-            const image = new Image();
+            const image =
+                new Image();
 
             image.decoding = "async";
 
             image.src =
-                `${materials[material].path}${i}.png`;
+                `${materials[material].folder}${i}.png`;
 
             image.onload = () => {
 
                 loadedImages++;
 
                 /*
-                 * Assim que a primeira imagem estiver pronta,
-                 * ela aparece imediatamente.
+                 * Não exibimos "Carregando dispositivo..."
+                 * na tela.
                  */
+
                 if (i === 1) {
-
-                    currentFrame = 1;
-
-                    drawFrame();
+                    drawCurrentFrame();
                 }
 
             };
 
+
             image.onerror = () => {
 
                 console.warn(
-                    `Imagem não encontrada: ${image.src}`
+                    `Não foi possível carregar: ${image.src}`
                 );
 
             };
 
+
             images.push(image);
         }
 
-        if (totalElement) {
 
-            totalElement.textContent =
-                String(totalFrames).padStart(2, "0");
-        }
+        /*
+         * Pré-carrega todas as imagens sem colocar
+         * nenhuma mensagem na interface.
+         */
+
+        images.forEach(image => {
+
+            if (image.complete) {
+                loadedImages++;
+            }
+
+        });
+
+
+        drawCurrentFrame();
     }
+
 
 
     /* =====================================================
        DESENHAR FRAME
-    ====================================================== */
+    ===================================================== */
 
-    function drawFrame() {
+    function drawCurrentFrame() {
 
-        const image = images[currentFrame - 1];
-
-        if (!image || !image.complete || !image.naturalWidth) {
+        if (!ctx || !canvas) {
             return;
         }
+
+
+        const image =
+            images[currentFrame - 1];
+
+
+        if (!image || !image.complete) {
+            return;
+        }
+
+
+        if (image.naturalWidth === 0) {
+            return;
+        }
+
 
         const width =
             canvas.clientWidth;
 
         const height =
             canvas.clientHeight;
+
+
+        if (!width || !height) {
+            return;
+        }
+
 
         ctx.clearRect(
             0,
@@ -151,6 +233,12 @@ document.addEventListener("DOMContentLoaded", () => {
             height
         );
 
+
+        /*
+         * Mantém a imagem inteira dentro do espaço.
+         * Isso evita cortar o produto quando a tela
+         * fica menor.
+         */
 
         const imageRatio =
             image.naturalWidth /
@@ -161,22 +249,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         let drawWidth;
+
         let drawHeight;
 
 
         if (imageRatio > canvasRatio) {
 
-            drawWidth = width;
+            drawWidth =
+                width * 0.90;
 
             drawHeight =
-                width / imageRatio;
+                drawWidth / imageRatio;
 
         } else {
 
-            drawHeight = height;
+            drawHeight =
+                height * 0.90;
 
             drawWidth =
-                height * imageRatio;
+                drawHeight * imageRatio;
+
+        }
+
+
+        /*
+         * Limita novamente para evitar qualquer corte.
+         */
+
+        if (drawWidth > width * 0.94) {
+
+            drawWidth =
+                width * 0.94;
+
+            drawHeight =
+                drawWidth / imageRatio;
+
+        }
+
+
+        if (drawHeight > height * 0.94) {
+
+            drawHeight =
+                height * 0.94;
+
+            drawWidth =
+                drawHeight * imageRatio;
+
         }
 
 
@@ -187,6 +305,11 @@ document.addEventListener("DOMContentLoaded", () => {
             (height - drawHeight) / 2;
 
 
+        ctx.imageSmoothingEnabled = true;
+
+        ctx.imageSmoothingQuality = "high";
+
+
         ctx.drawImage(
             image,
             x,
@@ -194,157 +317,409 @@ document.addEventListener("DOMContentLoaded", () => {
             drawWidth,
             drawHeight
         );
+    }
+
+
+
+    /* =====================================================
+       FRAME ATUAL
+    ===================================================== */
+
+    function updateFrame(frame) {
+
+        frame =
+            Math.max(
+                1,
+                Math.min(
+                    TOTAL_FRAMES,
+                    Math.round(frame)
+                )
+            );
+
+
+        if (frame === currentFrame) {
+            return;
+        }
+
+
+        currentFrame =
+            frame;
 
 
         if (currentElement) {
 
             currentElement.textContent =
                 String(currentFrame).padStart(2, "0");
+
         }
+
+
+        drawCurrentFrame();
     }
 
 
-    /* =====================================================
-       FRAME PELO SCROLL
-    ====================================================== */
 
-    function updateFrameFromScroll() {
+    /* =====================================================
+       SCROLL PARA FRAME
+    ===================================================== */
+
+    function updateFromScroll() {
 
         const section =
             document.querySelector(".product-sequence");
 
-        if (!section) return;
+        if (!section) {
+            return;
+        }
 
 
         const rect =
             section.getBoundingClientRect();
 
-        const scrollable =
-            section.offsetHeight -
+        const sectionHeight =
+            section.offsetHeight;
+
+        const viewportHeight =
             window.innerHeight;
 
 
-        if (scrollable <= 0) return;
+        /*
+         * Calcula o progresso da sequência.
+         */
 
-
-        const progress =
-            Math.min(
-                Math.max(
-                    -rect.top / scrollable,
-                    0
-                ),
-                1
+        const maxScroll =
+            Math.max(
+                1,
+                sectionHeight - viewportHeight
             );
 
 
-        const frame =
-            Math.min(
-                totalFrames,
-                Math.max(
+        let progress =
+            -rect.top / maxScroll;
+
+
+        progress =
+            Math.max(
+                0,
+                Math.min(
                     1,
-                    Math.floor(
-                        progress * totalFrames
-                    ) + 1
+                    progress
                 )
             );
 
 
-        if (frame !== currentFrame) {
+        /*
+         * Pequena suavização para deixar a mudança
+         * de imagens mais agradável.
+         */
 
-            currentFrame = frame;
+        const frame =
+            1 +
+            progress *
+            (TOTAL_FRAMES - 1);
 
-            drawFrame();
+
+        updateFrame(frame);
+    }
+
+
+
+    /* =====================================================
+       SCROLL
+    ===================================================== */
+
+    function handleScroll() {
+
+        const currentScrollY =
+            window.scrollY;
+
+        scrollVelocity =
+            Math.abs(
+                currentScrollY - lastScrollY
+            );
+
+        lastScrollY =
+            currentScrollY;
+
+
+        if (!animationFrame) {
+
+            animationFrame =
+                requestAnimationFrame(() => {
+
+                    updateFromScroll();
+
+                    animationFrame =
+                        null;
+
+                });
+
         }
     }
 
 
+
     /* =====================================================
-       MATERIAL
-    ====================================================== */
+       TROCA DE MATERIAL
+    ===================================================== */
+
+    function changeMaterial(material) {
+
+        if (!materials[material]) {
+            return;
+        }
+
+
+        currentMaterial =
+            material;
+
+
+        /*
+         * Atualiza visual dos botões.
+         */
+
+        materialButtons.forEach(button => {
+
+            const isActive =
+                button.dataset.material === material;
+
+            button.classList.toggle(
+                "active",
+                isActive
+            );
+
+        });
+
+
+        /*
+         * Atualiza preço.
+         */
+
+        if (priceElement) {
+
+            priceElement.textContent =
+                materials[material].price;
+
+        }
+
+
+        /*
+         * Atualiza descrição.
+         */
+
+        if (descriptionElement) {
+
+            descriptionElement.textContent =
+                materials[material].description;
+
+        }
+
+
+        /*
+         * Reinicia a sequência.
+         */
+
+        currentFrame = 1;
+
+        if (currentElement) {
+
+            currentElement.textContent =
+                "01";
+
+        }
+
+
+        loadImages(material);
+    }
+
+
+
+    /* =====================================================
+       EVENTOS DOS BOTÕES
+    ===================================================== */
 
     materialButtons.forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            const selected =
-                button.dataset.material;
+                const material =
+                    button.dataset.material;
 
-            if (!materials[selected]) return;
+                changeMaterial(material);
 
-            material = selected;
-
-
-            materialButtons.forEach(btn => {
-
-                btn.classList.toggle(
-                    "active",
-                    btn === button
-                );
-
-            });
-
-
-            updatePrice();
-
-            loadImages();
-        });
+            }
+        );
 
     });
 
 
-    /* =====================================================
-       PREÇO
-    ====================================================== */
-
-    function updatePrice() {
-
-        const price =
-            document.querySelector(".price-value");
-
-        const description =
-            document.querySelector(".price-description");
-
-
-        if (price) {
-
-            price.textContent =
-                materials[material].price;
-        }
-
-
-        if (description) {
-
-            description.textContent =
-                materials[material].description;
-        }
-    }
-
 
     /* =====================================================
-       EVENTOS
-    ====================================================== */
+       REDIMENSIONAMENTO
+    ===================================================== */
 
-    window.addEventListener(
-        "scroll",
-        updateFrameFromScroll,
-        { passive: true }
-    );
+    let resizeTimer;
 
 
     window.addEventListener(
         "resize",
-        resizeCanvas
+        () => {
+
+            clearTimeout(resizeTimer);
+
+            resizeTimer =
+                setTimeout(() => {
+
+                    resizeCanvas();
+
+                    updateFromScroll();
+
+                }, 100);
+
+        }
     );
+
+
+
+    /* =====================================================
+       SCROLL
+    ===================================================== */
+
+    window.addEventListener(
+        "scroll",
+        handleScroll,
+        {
+            passive: true
+        }
+    );
+
+
+
+    /* =====================================================
+       MENU PRODUTOS
+    ===================================================== */
+
+    const productsMenu =
+        document.querySelector(".products-menu");
+
+    const productsTrigger =
+        document.querySelector(".products-trigger");
+
+
+    if (
+        productsMenu &&
+        productsTrigger
+    ) {
+
+        productsTrigger.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
+
+                productsMenu.classList.toggle(
+                    "open"
+                );
+
+            }
+        );
+
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    !productsMenu.contains(event.target)
+                ) {
+
+                    productsMenu.classList.remove(
+                        "open"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       ANO DO FOOTER
+    ===================================================== */
+
+    const yearElement =
+        document.getElementById("ano");
+
+
+    if (yearElement) {
+
+        yearElement.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+
+    /* =====================================================
+       LINK SUAVE PARA EXPLORAR
+    ===================================================== */
+
+    document
+        .querySelectorAll('a[href="#explorar"]')
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                event => {
+
+                    const target =
+                        document.getElementById(
+                            "explorar"
+                        );
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+            );
+
+        });
+
 
 
     /* =====================================================
        INICIALIZAÇÃO
-    ====================================================== */
-
-    updatePrice();
+    ===================================================== */
 
     resizeCanvas();
 
-    loadImages();
+    /*
+     * Carrega primeiro o plástico, que é o material
+     * selecionado inicialmente.
+     */
+
+    loadImages("plastic");
+
+    /*
+     * Garante que a posição inicial do scroll
+     * seja refletida no contador.
+     */
+
+    updateFromScroll();
 
 });
