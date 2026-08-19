@@ -6,40 +6,44 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="PatronusNet: proteção inteligente e monitoramento de atividades online.">
-
-    <meta name="keywords"
-        content="PatronusNet, proteção digital, IoT, segurança, rede, DNS">
-
-    <meta name="author" content="PatronusNet">
-
-    <meta property="og:title" content="PatronusNet - Proteção Digital Inteligente">
-    <meta property="og:description"
-        content="Proteção, estilo e identidade para seus projetos IoT.">
-    <meta property="og:type" content="website">
+    <meta
+        name="description"
+        content="PatronusNet: proteção inteligente para sua navegação, dispositivos e rede."
+    >
 
     <title>PatronusNet | Proteção Digital Inteligente</title>
 
-    <link rel="shortcut icon"
+    <link
+        rel="shortcut icon"
         href="assets/img/favi-icon.png"
-        type="image/png">
+        type="image/png"
+    >
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/index.css"
+    >
 </head>
 
 <body>
 
-    <!-- =========================================
+    <!-- =====================================================
          HEADER
-    ========================================== -->
+    ====================================================== -->
 
     <header class="site-header">
 
         <nav class="nav-container">
 
-            <a href="index.html" class="logo-txt">
+            <a
+                href="index.html"
+                class="logo-txt"
+            >
 
                 <img
                     src="assets/img/favi-icon.png"
@@ -53,13 +57,18 @@
 
             </a>
 
+
             <ul class="nav-links">
 
                 <li>
-                    <a href="index.html" class="active">
+                    <a
+                        href="index.html"
+                        class="active"
+                    >
                         Home
                     </a>
                 </li>
+
 
                 <li>
                     <a href="sobre-nos.html">
@@ -67,10 +76,73 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="produto.html">
+
+                <!-- =================================================
+                     PRODUTOS
+                ================================================== -->
+
+                <li class="products-menu">
+
+                    <button
+                        class="products-trigger"
+                        type="button"
+                        aria-expanded="false"
+                    >
                         Produtos
-                    </a>
+
+                        <span class="products-arrow">
+                            ↓
+                        </span>
+                    </button>
+
+
+                    <div class="products-dropdown">
+
+                        <a
+                            href="case.html"
+                            class="product-option"
+                        >
+
+                            <span class="product-option-icon">
+                                ◈
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Dispositivo
+                                </strong>
+
+                                <small>
+                                    Proteção portátil
+                                </small>
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="navegador.html"
+                            class="product-option"
+                        >
+
+                            <span class="product-option-icon browser-icon">
+                                ◉
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Navegador
+                                </strong>
+
+                                <small>
+                                    Mais controle e recursos
+                                </small>
+                            </span>
+
+                        </a>
+
+                    </div>
+
                 </li>
 
             </ul>
@@ -82,425 +154,638 @@
 
     <main>
 
-        <!-- =========================================
+
+        <!-- =====================================================
              HERO
-        ========================================== -->
+        ====================================================== -->
 
-        <section class="hero">
+        <section class="home-hero">
 
-            <div class="hero-background"></div>
+            <div class="home-hero-orb orb-blue"></div>
+            <div class="home-hero-orb orb-brown"></div>
 
-            <div class="hero-content">
+
+            <div class="home-hero-content">
 
                 <span class="hero-kicker">
-                    PROTEÇÃO • ESTILO • IDENTIDADE
+                    PROTEÇÃO DIGITAL INTELIGENTE
                 </span>
 
                 <h1>
-                    Patronus<span>Net</span>
+                    Proteção que
+                    <span>acompanha você.</span>
                 </h1>
 
                 <p>
-                    Assim como o urso protege seu filhote,
-                    o PatronusNet protege seus projetos,
-                    dispositivos e sua rede.
+                    PatronusNet combina proteção de rede,
+                    navegação inteligente e moderação de conteúdo
+                    para criar um ambiente digital mais seguro,
+                    controlado e responsável.
                 </p>
 
-                <div class="hero-buttons">
 
-                    <a href="#produto" class="btn btn-primary">
-                        Conheça o produto
-                    </a>
-
-                    <a href="produto.html" class="btn btn-secondary">
-                        Saiba mais
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-scroll">
-
-                <span>
-                    Role para explorar
-                </span>
-
-                <div class="scroll-line"></div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             PRODUTO / SCROLL SEQUENCE
-        ========================================== -->
-
-        <section
-            class="product-sequence"
-            id="produto"
-        >
-
-            <div class="sequence-sticky">
-
-                <div class="sequence-container">
-
-                    <!-- Texto -->
-
-                    <div class="sequence-info">
-
-                        <span class="section-label">
-                            PATRONUSNET CASE
-                        </span>
-
-                        <h2>
-                            Seu projeto.
-                            <strong>Sua identidade.</strong>
-                        </h2>
-
-                        <p>
-                            Explore diferentes ângulos e versões
-                            do gabinete PatronusNet enquanto
-                            navega pela página.
-                        </p>
-
-
-                        <!-- Seletor -->
-
-                        <div class="material-selector">
-
-                            <button
-                                class="material-btn active"
-                                data-material="plastic"
-                                type="button"
-                            >
-                                <span class="material-dot plastic-dot"></span>
-
-                                Plástico
-
-                            </button>
-
-
-                            <button
-                                class="material-btn"
-                                data-material="wood"
-                                type="button"
-                            >
-                                <span class="material-dot wood-dot"></span>
-
-                                Madeira
-
-                            </button>
-
-                        </div>
-
-
-                        <div class="sequence-counter">
-
-                            <span id="sequenceCurrent">
-                                01
-                            </span>
-
-                            <span class="counter-divider">
-                                /
-                            </span>
-
-                            <span id="sequenceTotal">
-                                07
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Produto -->
-
-                    <div class="sequence-product">
-
-                        <div class="product-glow"></div>
-
-                        <div class="product-frame">
-
-                            <canvas
-                                id="productCanvas"
-                                aria-label="Visualização do gabinete PatronusNet"
-                            ></canvas>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             INTRO
-        ========================================== -->
-
-        <section class="intro-section">
-
-            <div class="section-inner">
-
-                <span class="section-label">
-                    PATRONUSNET
-                </span>
-
-                <h2>
-                    Mais do que um case.
-                    <span>É identidade.</span>
-                </h2>
-
-                <p>
-                    Desenvolvido para proteger seus componentes
-                    e, ao mesmo tempo, representar visualmente
-                    seus projetos IoT.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             CARDS
-        ========================================== -->
-
-        <section class="features-section">
-
-            <div class="section-inner">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        RECURSOS
-                    </span>
-
-                    <h2>
-                        Pensado em cada detalhe
-                    </h2>
-
-                </div>
-
-
-                <div class="features-grid">
-
-                    <article class="feature-card">
-
-                        <div class="feature-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Encaixe preciso
-                        </h3>
-
-                        <p>
-                            Estrutura desenvolvida para acomodar
-                            os componentes do projeto com segurança
-                            e organização.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <div class="feature-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Ventilação
-                        </h3>
-
-                        <p>
-                            Aberturas estrategicamente posicionadas
-                            para auxiliar na dissipação de calor.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <div class="feature-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Fácil montagem
-                        </h3>
-
-                        <p>
-                            Componentes projetados para facilitar
-                            a montagem e manutenção do dispositivo.
-                        </p>
-
-                    </article>
-
-
-                    <article class="feature-card">
-
-                        <div class="feature-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Duas versões
-                        </h3>
-
-                        <p>
-                            Escolha entre a versão em plástico
-                            ou o acabamento em madeira.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             COMO FUNCIONA
-        ========================================== -->
-
-        <section class="como-funciona">
-
-            <div class="section-inner">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        COMO FUNCIONA
-                    </span>
-
-                    <h2>
-                        Proteção em poucos passos
-                    </h2>
-
-                </div>
-
-
-                <div class="steps-grid">
-
-                    <article class="step">
-
-                        <span>01</span>
-
-                        <h3>
-                            Instale
-                        </h3>
-
-                        <p>
-                            Instale a extensão PatronusNet
-                            no seu navegador.
-                        </p>
-
-                    </article>
-
-
-                    <article class="step">
-
-                        <span>02</span>
-
-                        <h3>
-                            Configure
-                        </h3>
-
-                        <p>
-                            Defina suas regras de proteção,
-                            filtros e bloqueios.
-                        </p>
-
-                    </article>
-
-
-                    <article class="step">
-
-                        <span>03</span>
-
-                        <h3>
-                            Monitore
-                        </h3>
-
-                        <p>
-                            Acompanhe as atividades e
-                            bloqueios da sua rede.
-                        </p>
-
-                    </article>
-
-
-                    <article class="step">
-
-                        <span>04</span>
-
-                        <h3>
-                            Proteja
-                        </h3>
-
-                        <p>
-                            Mantenha seus dispositivos
-                            protegidos continuamente.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             CTA
-        ========================================== -->
-
-        <section class="cta-section">
-
-            <div class="cta-content">
-
-                <span class="section-label">
-                    PATRONUSNET
-                </span>
-
-                <h2>
-                    Comece a proteger
-                    sua rede.
-                </h2>
-
-                <p>
-                    Segurança inteligente para seus dispositivos,
-                    projetos e ambiente digital.
-                </p>
-
-                <div class="cta-buttons">
+                <div class="hero-actions">
 
                     <a
-                        href="produto.html"
+                        href="#produtos"
                         class="btn btn-primary"
                     >
-                        Baixar extensão
+                        Conheça as soluções
                     </a>
 
                     <a
                         href="sobre-nos.html"
                         class="btn btn-secondary"
                     >
-                        Conheça a equipe
+                        Sobre o PatronusNet
                     </a>
 
                 </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="hero-card">
+
+                    <div class="hero-card-top">
+
+                        <span>
+                            PATRONUSNET
+                        </span>
+
+                        <span class="status-dot">
+                            ● protegido
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-shield">
+                        🛡
+                    </div>
+
+
+                    <strong>
+                        Ambiente protegido
+                    </strong>
+
+                    <p>
+                        Controle inteligente
+                        da sua experiência digital.
+                    </p>
+
+
+                    <div class="hero-card-line">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-scroll">
+
+                <span>
+                    Explore
+                </span>
+
+                <div></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO
+        ====================================================== -->
+
+        <section class="intro-home">
+
+            <div class="section-inner">
+
+                <span class="section-label">
+                    UM ECOSSISTEMA
+                </span>
+
+                <h2>
+                    Uma proteção.
+                    <span>Duas experiências.</span>
+                </h2>
+
+                <p>
+                    Escolha a solução que melhor combina com
+                    sua rotina. O PatronusNet pode acompanhar
+                    você por meio de um dispositivo portátil
+                    ou diretamente no navegador.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRODUTOS
+        ====================================================== -->
+
+        <section
+            class="products-section"
+            id="produtos"
+        >
+
+            <div class="section-inner">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        PRODUTOS
+                    </span>
+
+                    <h2>
+                        Escolha como
+                        <span>quer ser protegido.</span>
+                    </h2>
+
+                    <p>
+                        Duas soluções diferentes,
+                        construídas para objetivos diferentes.
+                    </p>
+
+                </div>
+
+
+                <div class="products-grid">
+
+
+                    <!-- =================================================
+                         DISPOSITIVO
+                    ================================================== -->
+
+                    <article class="product-card device-card">
+
+                        <div class="product-card-glow"></div>
+
+
+                        <div class="product-card-header">
+
+                            <span class="product-tag">
+                                DISPOSITIVO
+                            </span>
+
+                            <span class="product-number">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-visual device-visual">
+
+                            <div class="device-placeholder">
+
+                                <div class="device-top">
+                                    PATRONUS
+                                </div>
+
+                                <div class="device-port"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            PatronusNet
+                            <span>Device</span>
+                        </h3>
+
+                        <p>
+                            Um dispositivo portátil para levar
+                            sua proteção com você. Ideal para
+                            ambientes onde você precisa de uma
+                            camada adicional de controle e segurança.
+                        </p>
+
+
+                        <ul class="product-features">
+
+                            <li>
+                                <span>✓</span>
+                                Portátil
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Proteção de rede
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Bloqueio de sites
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Configuração centralizada
+                            </li>
+
+                        </ul>
+
+
+                        <a
+                            href="case.html"
+                            class="product-link"
+                        >
+                            Conhecer dispositivo
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         NAVEGADOR
+                    ================================================== -->
+
+                    <article class="product-card browser-card">
+
+                        <div class="product-card-glow"></div>
+
+
+                        <div class="product-card-header">
+
+                            <span class="product-tag">
+                                NAVEGADOR
+                            </span>
+
+                            <span class="product-number">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="product-visual browser-visual">
+
+                            <div class="browser-window">
+
+                                <div class="browser-toolbar">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+                                <div class="browser-content">
+
+                                    <div class="browser-shield">
+                                        🛡
+                                    </div>
+
+                                    <strong>
+                                        PatronusNet ativo
+                                    </strong>
+
+                                    <small>
+                                        Navegação protegida
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <h3>
+                            PatronusNet
+                            <span>Browser</span>
+                        </h3>
+
+                        <p>
+                            Uma extensão de navegador com mais
+                            recursos de controle, moderação e
+                            acompanhamento para uma experiência
+                            digital personalizada.
+                        </p>
+
+
+                        <ul class="product-features">
+
+                            <li>
+                                <span>✓</span>
+                                Bloqueio de sites
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Moderação com IA
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Políticas com horário
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Modo Tartaruga
+                            </li>
+
+                        </ul>
+
+
+                        <a
+                            href="navegador.html"
+                            class="product-link"
+                        >
+                            Conhecer navegador
+                            <span>→</span>
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RECURSOS
+        ====================================================== -->
+
+        <section class="resources-section">
+
+            <div class="section-inner">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        PATRONUSNET BROWSER
+                    </span>
+
+                    <h2>
+                        Mais controle.
+                        <span>Mais inteligência.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="resources-grid">
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Bloqueio de sites
+                        </h3>
+
+                        <p>
+                            Defina domínios e categorias que
+                            não devem ser acessados e mantenha
+                            suas políticas de proteção ativas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Inteligência Artificial
+                        </h3>
+
+                        <p>
+                            A moderação inteligente auxilia na
+                            análise do conteúdo acessado para
+                            aplicar políticas de segurança.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◷
+                        </div>
+
+                        <h3>
+                            Políticas por horário
+                        </h3>
+
+                        <p>
+                            Cronometre suas políticas de segurança
+                            e defina quando determinadas regras
+                            devem estar ativas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card turtle-card">
+
+                        <div class="resource-icon">
+                            🐢
+                        </div>
+
+                        <h3>
+                            Modo Tartaruga
+                        </h3>
+
+                        <p>
+                            Um modo voltado à privacidade que
+                            reduz sinais de identificação durante
+                            a navegação, conforme as capacidades
+                            da extensão.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Interface amigável
+                        </h3>
+
+                        <p>
+                            Informações organizadas em uma
+                            interface simples para configurar,
+                            acompanhar e entender sua proteção.
+                        </p>
+
+                    </article>
+
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Controle personalizado
+                        </h3>
+
+                        <p>
+                            Ajuste as regras de acordo com o
+                            perfil e a necessidade do ambiente
+                            protegido.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DIFERENÇA
+        ====================================================== -->
+
+        <section class="comparison-section">
+
+            <div class="section-inner">
+
+                <div class="comparison">
+
+                    <div class="comparison-intro">
+
+                        <span class="section-label">
+                            QUAL ESCOLHER?
+                        </span>
+
+                        <h2>
+                            Dispositivo ou navegador?
+                        </h2>
+
+                        <p>
+                            A diferença está no ambiente em que
+                            você deseja aplicar a proteção.
+                        </p>
+
+                    </div>
+
+
+                    <div class="comparison-items">
+
+                        <div class="comparison-item">
+
+                            <span class="comparison-icon">
+                                ◈
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Dispositivo
+                                </h3>
+
+                                <p>
+                                    Portátil e pensado para
+                                    acompanhar sua infraestrutura
+                                    de rede em diferentes locais.
+                                </p>
+
+                                <a href="case.html">
+                                    Ver dispositivo →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="comparison-item">
+
+                            <span class="comparison-icon">
+                                ◉
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Navegador
+                                </h3>
+
+                                <p>
+                                    Mais recursos de controle,
+                                    moderação e acompanhamento,
+                                    associado ao navegador,
+                                    dispositivo ou conta configurada.
+                                </p>
+
+                                <a href="navegador.html">
+                                    Ver navegador →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="home-cta">
+
+            <div class="home-cta-content">
+
+                <span class="section-label">
+                    PATRONUSNET
+                </span>
+
+                <h2>
+                    Proteção inteligente
+                    para o mundo digital.
+                </h2>
+
+                <p>
+                    Escolha seu produto e descubra uma nova
+                    maneira de controlar sua experiência online.
+                </p>
+
+                <a
+                    href="#produtos"
+                    class="btn btn-primary"
+                >
+                    Escolher produto
+                </a>
 
             </div>
 
@@ -509,9 +794,9 @@
     </main>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          FOOTER
-    ========================================== -->
+    ====================================================== -->
 
     <footer>
 
@@ -534,26 +819,20 @@
             <div class="footer-section">
 
                 <h4>
-                    Links rápidos
+                    Produtos
                 </h4>
 
                 <ul>
 
                     <li>
-                        <a href="index.html">
-                            Home
+                        <a href="case.html">
+                            Dispositivo
                         </a>
                     </li>
 
                     <li>
-                        <a href="sobre-nos.html">
-                            Sobre Nós
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="produto.html">
-                            Produtos
+                        <a href="navegador.html">
+                            Navegador
                         </a>
                     </li>
 
@@ -565,17 +844,21 @@
             <div class="footer-section">
 
                 <h4>
-                    Redes sociais
+                    Institucional
                 </h4>
 
                 <ul>
 
                     <li>
-                        <a
-                            href="https://github.com/rainbowcrack/patronusnet-site"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <a href="sobre-nos.html">
+                            Sobre Nós
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/rainbowcrack/patronusnet-site"
+                           target="_blank"
+                           rel="noreferrer">
                             GitHub
                         </a>
                     </li>
@@ -607,7 +890,70 @@
 
 
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/index.js"></script>
+
+    <script>
+        document.getElementById("ano").textContent =
+            new Date().getFullYear();
+
+
+        /*
+         * Menu Produtos:
+         * desktop = hover via CSS
+         * mobile = clique via JS
+         */
+
+        const productsMenu =
+            document.querySelector(".products-menu");
+
+        const productsTrigger =
+            document.querySelector(".products-trigger");
+
+
+        if (productsMenu && productsTrigger) {
+
+            productsTrigger.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    productsMenu.classList.toggle(
+                        "open"
+                    );
+
+                    productsTrigger.setAttribute(
+                        "aria-expanded",
+                        productsMenu.classList.contains("open")
+                    );
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        !productsMenu.contains(event.target)
+                    ) {
+
+                        productsMenu.classList.remove(
+                            "open"
+                        );
+
+                        productsTrigger.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    </script>
 
 </body>
 
