@@ -1,192 +1,861 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conheça a equipe de desenvolvedores e orientadores do PatronusNet. Projeto acadêmico de proteção digital desenvolvido na PUC Minas.">
-    <meta name="keywords" content="equipe PatronusNet, desenvolvedores, PUC Minas, projeto acadêmico">
+    <meta name="description" content="Conheça o PatronusNet, sua equipe, tecnologia e proposta de proteção digital local.">
+    <meta name="keywords" content="PatronusNet, ESP32, segurança digital, extensão navegador, proteção de rede, PUC Minas">
     <meta name="author" content="PatronusNet Team">
-    <meta property="og:title" content="Sobre Nós - PatronusNet">
-    <meta property="og:description" content="Conheça a equipe dedicada criando proteção digital inteligente.">
+
+    <meta property="og:title" content="Sobre Nós | PatronusNet">
+    <meta property="og:description" content="Conheça a equipe, a tecnologia e a proposta do PatronusNet.">
     <meta property="og:type" content="website">
+
     <title>Sobre Nós | PatronusNet</title>
+
     <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
-    
+
+    <!-- CSS global -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS específico desta página -->
     <link rel="stylesheet" href="assets/css/sobre-nos.css">
 </head>
+
 <body>
 
-    <canvas id="canvas-grafos"></canvas>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo-txt">
-                <img src="assets/img/favi-icon.png" alt="PatronusNet Ícone" class="logo-icon">
-                PatronusNet
+    <header class="site-header">
+        <nav class="nav-container" aria-label="Navegação principal">
+
+            <a href="index.html" class="logo-txt" aria-label="PatronusNet - Página inicial">
+                <img src="assets/img/favi-icon.png" alt="" class="logo-icon">
+                <span>Patronus<span>Net</span></span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobre-nos.html" class="active">Sobre Nós</a></li>
-                <li><a href="produto.html">Produtos</a></li>
+
+            <!-- Botão mobile -->
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="main-navigation">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="sobre-nos.html" class="active" aria-current="page">
+                        Sobre Nós
+                    </a>
+                </li>
+
+                <li class="products-menu">
+                    <button
+                        class="products-trigger"
+                        type="button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <span>Produtos</span>
+                        <span class="products-arrow" aria-hidden="true">↓</span>
+                    </button>
+
+                    <div class="products-dropdown" role="menu">
+                        <a href="case.html" class="product-option" role="menuitem">
+                            <span class="product-option-icon" aria-hidden="true">◈</span>
+
+                            <span>
+                                <strong>Dispositivo</strong>
+                                <small>Proteção portátil</small>
+                            </span>
+                        </a>
+
+                        <a href="navegador.html" class="product-option" role="menuitem">
+                            <span class="product-option-icon browser-icon" aria-hidden="true">◉</span>
+
+                            <span>
+                                <strong>Navegador</strong>
+                                <small>Mais controle e recursos</small>
+                            </span>
+                        </a>
+                    </div>
+                </li>
             </ul>
+
         </nav>
     </header>
 
     <main>
-        <section class="secao-intro">
-            <h1 class="titulo-principal">Sobre o PatronusNet</h1>
-            <p class="subtitulo">Um projeto acadêmico dedicado a criar proteção digital acessível e inteligente para todos.</p>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <span class="hero-kicker">SOBRE O PATRONUSNET</span>
+
+                <h1>
+                    Tecnologia para uma
+                    <span>proteção mais inteligente.</span>
+                </h1>
+
+                <p>
+                    O PatronusNet é um projeto acadêmico que combina hardware,
+                    software, redes e inteligência para desenvolver uma
+                    abordagem local e acessível de proteção digital.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#proposta" class="btn btn-primary">
+                        Conheça o projeto
+                    </a>
+
+                    <a href="#equipe" class="btn btn-secondary">
+                        Conheça a equipe
+                    </a>
+                </div>
+            </div>
+
+            <div class="about-hero-visual">
+                <div class="about-hero-card">
+                    <div class="about-card-top">
+                        <span>PATRONUSNET</span>
+                        <span class="about-status">● LOCAL</span>
+                    </div>
+
+                    <div class="about-card-icon" aria-hidden="true">🛡</div>
+
+                    <strong>Proteção inteligente</strong>
+
+                    <p>Hardware + Software</p>
+
+                    <div class="about-card-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <a
+                href="#proposta"
+                class="hero-scroll"
+                aria-label="Ir para a seção Nossa Proposta"
+            >
+                <span>Explore</span>
+                <div></div>
+            </a>
         </section>
 
-        <section class="secao-missao">
-            <div class="missao-content">
-                <div class="missao-item">
-                    <h3>Nossa Missão</h3>
-                    <p>Desenvolver uma solução de código aberto que empodera usuários a proteger sua rede e dispositivos contra conteúdos indesejados, com ferramentas intuitivas e acessíveis a todos.</p>
+        <!-- =====================================================
+             PROPOSTA
+        ====================================================== -->
+
+        <section class="about-proposal" id="proposta">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">NOSSA PROPOSTA</span>
+
+                    <h2>
+                        Segurança não precisa
+                        <span>ser complicada.</span>
+                    </h2>
+
+                    <p>
+                        O PatronusNet foi pensado como um projeto acadêmico
+                        para explorar como hardware, software, redes e
+                        inteligência podem trabalhar juntos em uma solução
+                        de proteção digital.
+                    </p>
                 </div>
-                <div class="missao-item">
-                    <h3>Visão</h3>
-                    <p>Ser referência em proteção digital educacional, promovendo segurança online responsável e conscientização sobre o uso seguro da internet.</p>
-                </div>
-                <div class="missao-item">
-                    <h3>Objetivo</h3>
-                    <p>Fornecer ferramentas de filtragem, bloqueio e monitoramento que funcionem em nível de rede e extensão, permitindo controle centralizado e proteção automática.</p>
+
+                <div class="proposal-grid">
+
+                    <article class="proposal-card">
+                        <span class="proposal-number">01</span>
+
+                        <div class="proposal-icon" aria-hidden="true">◈</div>
+
+                        <h3>Hardware</h3>
+
+                        <p>
+                            O PatronusNet Device utiliza um microcontrolador
+                            ESP32 como base para criar uma camada física,
+                            portátil e de baixo consumo.
+                        </p>
+                    </article>
+
+                    <article class="proposal-card">
+                        <span class="proposal-number">02</span>
+
+                        <div class="proposal-icon" aria-hidden="true">◉</div>
+
+                        <h3>Software</h3>
+
+                        <p>
+                            A extensão PatronusNet Browser amplia o controle
+                            diretamente durante a navegação, permitindo
+                            configurar políticas e filtros.
+                        </p>
+                    </article>
+
+                    <article class="proposal-card">
+                        <span class="proposal-number">03</span>
+
+                        <div class="proposal-icon" aria-hidden="true">✦</div>
+
+                        <h3>Integração</h3>
+
+                        <p>
+                            Os diferentes componentes foram pensados para
+                            trabalhar em conjunto, formando um ecossistema
+                            de proteção mais flexível.
+                        </p>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <h2 class="titulo-secao">Nossa Equipe</h2>
-        
-        <section class="grid-equipe">
-            <div class="card card-membro">
-                <div class="avatar-container">
-                    <img src="assets/img/avatar/izabel-chaves.png" alt="Izabel Chaves" class="avatar-img">
+        <!-- =====================================================
+             TECNOLOGIA
+        ====================================================== -->
+
+        <section class="technology-section">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">TECNOLOGIA</span>
+
+                    <h2>
+                        Hardware e software
+                        <span>trabalhando juntos.</span>
+                    </h2>
+
+                    <p>
+                        Cada parte do PatronusNet possui uma função
+                        específica dentro da arquitetura da solução.
+                    </p>
                 </div>
-                <h3>Izabel Chaves</h3>
-                <div class="cargo">Discente de computação | PUC Minas</div>
-                <p>Responsável pelo design de interface, pesquisa de experiência do usuário e construção das telas de controle de acesso.</p>
-                <div class="membro-acoes">
-                    <a href="http://lattes.cnpq.br/9364437259496458" class="btn btn-icon" title="Lattes" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/lattes.png" alt="Lattes">
-                    </a>
-                    <a href="https://orcid.org/0009-0008-9198-3909" class="btn btn-icon" title="ORCID" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/orcid.png" alt="ORCID">
-                    </a>
-                    <a href="https://github.com/rainbowcrack" class="btn btn-icon" title="GitHub" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/github.png" alt="GitHub">
-                    </a>
+
+                <div class="technology-grid">
+
+                    <!-- DEVICE -->
+
+                    <article class="technology-card device-tech">
+                        <div class="technology-card-header">
+                            <span class="technology-number">01</span>
+                            <span class="technology-type">HARDWARE</span>
+                        </div>
+
+                        <div class="technology-image">
+                            <img
+                                src="assets/img/case/plastic/1.png"
+                                alt="PatronusNet Device"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="technology-content">
+                            <h3>
+                                PatronusNet
+                                <span>Device</span>
+                            </h3>
+
+                            <p>
+                                Um dispositivo portátil desenvolvido com ESP32
+                                para atuar como parte da infraestrutura de proteção.
+                            </p>
+
+                            <ul class="technology-features">
+                                <li><span>✓</span> ESP32</li>
+                                <li><span>✓</span> Comunicação em rede</li>
+                                <li><span>✓</span> Configuração local</li>
+                                <li><span>✓</span> Baixo consumo</li>
+                            </ul>
+
+                            <a href="case.html" class="technology-link">
+                                Conhecer dispositivo
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- BROWSER -->
+
+                    <article class="technology-card browser-tech">
+                        <div class="technology-card-header">
+                            <span class="technology-number">02</span>
+                            <span class="technology-type">SOFTWARE</span>
+                        </div>
+
+                        <div class="technology-browser-visual">
+                            <div class="browser-window-about">
+
+                                <div class="browser-toolbar-about">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="browser-screen-about">
+                                    <div class="browser-shield-about" aria-hidden="true">
+                                        🛡
+                                    </div>
+
+                                    <strong>PatronusNet ativo</strong>
+                                    <small>Navegação protegida</small>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="technology-content">
+                            <h3>
+                                PatronusNet
+                                <span>Browser</span>
+                            </h3>
+
+                            <p>
+                                Uma extensão para navegador que adiciona recursos
+                                de controle, filtragem, políticas e moderação à
+                                experiência de navegação.
+                            </p>
+
+                            <ul class="technology-features">
+                                <li><span>✓</span> Bloqueio de sites</li>
+                                <li><span>✓</span> Políticas personalizadas</li>
+                                <li><span>✓</span> Controle por horário</li>
+                                <li><span>✓</span> Interface de configuração</li>
+                            </ul>
+
+                            <a href="navegador.html" class="technology-link">
+                                Conhecer navegador
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </div>
+        </section>
 
-            <div class="card card-membro">
-                <div class="avatar-container">
-                    <img src="assets/img/avatar/matheus-coxir.png" alt="Matheus Coxir" class="avatar-img">
-                </div>
-                <h3>Matheus Coxir</h3>
-                <div class="cargo">Discente de computação | PUC Minas</div>
-                <p>Atua no desenvolvimento do processamento de rede, filtragem de conteúdos e integração dos módulos de proteção.</p>
-                <div class="membro-acoes">
-                    <a href="http://lattes.cnpq.br/0513325822855362" class="btn btn-icon" title="Lattes" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/lattes.png" alt="Lattes">
-                    </a>
-                    <a href="https://orcid.org/0009-0008-8121-8277" class="btn btn-icon" title="ORCID" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/orcid.png" alt="ORCID">
-                    </a>
-                    <a href="https://github.com/MatheusSCxr" class="btn btn-icon" title="GitHub" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/github.png" alt="GitHub">
-                    </a>
+        <!-- =====================================================
+             SEGURANÇA
+        ====================================================== -->
+
+        <section class="security-section">
+            <div class="section-inner">
+
+                <div class="security-box">
+
+                    <div class="security-content">
+                        <span class="section-label">SEGURANÇA</span>
+
+                        <h2>
+                            Seus dados.
+                            <span>Seu ambiente.</span>
+                        </h2>
+
+                        <p>
+                            Uma das premissas do PatronusNet é priorizar o
+                            processamento local sempre que possível, reduzindo
+                            a necessidade de enviar informações de navegação
+                            para serviços externos.
+                        </p>
+
+                        <p>
+                            A arquitetura foi pensada para manter o controle
+                            das configurações e dos dados utilizados pela
+                            solução o mais próximo possível do ambiente protegido.
+                        </p>
+                    </div>
+
+                    <div class="security-features">
+
+                        <article class="security-item">
+                            <div class="security-icon" aria-hidden="true">◉</div>
+
+                            <div>
+                                <h3>Processamento local</h3>
+
+                                <p>
+                                    Prioridade para processamento realizado
+                                    no próprio ambiente.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="security-item">
+                            <div class="security-icon" aria-hidden="true">◈</div>
+
+                            <div>
+                                <h3>Controle dos dados</h3>
+
+                                <p>
+                                    Configurações e políticas permanecem sob
+                                    controle do ambiente protegido.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="security-item">
+                            <div class="security-icon" aria-hidden="true">✦</div>
+
+                            <div>
+                                <h3>Inteligência</h3>
+
+                                <p>
+                                    Recursos de análise e IA podem auxiliar na
+                                    classificação e moderação conforme a
+                                    arquitetura da aplicação.
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card card-membro">
-                <div class="avatar-container">
-                    <img src="assets/img/avatar/humberto-marques.png" alt="Humberto Marques" class="avatar-img">
+        <!-- =====================================================
+             EQUIPE
+        ====================================================== -->
+
+        <section class="team-section" id="equipe">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">NOSSA EQUIPE</span>
+
+                    <h2>
+                        Pessoas por trás
+                        <span>do projeto.</span>
+                    </h2>
+
+                    <p>
+                        Um projeto acadêmico desenvolvido através da colaboração
+                        entre estudantes e orientação acadêmica.
+                    </p>
                 </div>
-                <h3>Humberto Marques</h3>
-                <div class="cargo">Professor Orientador | PUC Minas</div>
-                <p>Professor orientador e supervisor técnico, responsável pelo acompanhamento acadêmico e validação do projeto.</p>
-                <div class="membro-acoes">
-                    <a href="http://lattes.cnpq.br/0898459356361957" class="btn btn-icon" title="Lattes" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/lattes.png" alt="Lattes">
+
+                <div class="team-grid">
+
+                    <!-- IZABEL -->
+
+                    <article class="team-card">
+                        <div class="team-photo">
+                            <img
+                                src="assets/img/avatar/izabel-chaves.png"
+                                alt="Foto de Izabel Chaves"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="team-content">
+                            <span class="team-role">
+                                DISCENTE DE COMPUTAÇÃO
+                            </span>
+
+                            <h3>Izabel Chaves</h3>
+
+                            <p>
+                                Atua no desenvolvimento da interface, experiência
+                                do usuário, segurança e integração de recursos
+                                inteligentes e de IA ao projeto.
+                            </p>
+
+                            <div class="team-tags">
+                                <span>Interface</span>
+                                <span>Segurança</span>
+                                <span>IA</span>
+                            </div>
+
+                            <div class="team-links">
+
+                                <a
+                                    href="http://lattes.cnpq.br/9364437259496458"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Currículo Lattes"
+                                    aria-label="Currículo Lattes de Izabel Chaves"
+                                >
+                                    <img
+                                        src="assets/img/icons/lattes.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                                <a
+                                    href="https://orcid.org/0009-0008-9198-3909"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="ORCID"
+                                    aria-label="ORCID de Izabel Chaves"
+                                >
+                                    <img
+                                        src="assets/img/icons/orcid.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                                <a
+                                    href="https://github.com/rainbowcrack"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="GitHub"
+                                    aria-label="GitHub de Izabel Chaves"
+                                >
+                                    <img
+                                        src="assets/img/icons/github.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MATHEUS -->
+
+                    <article class="team-card">
+                        <div class="team-photo">
+                            <img
+                                src="assets/img/avatar/matheus-coxir.png"
+                                alt="Foto de Matheus Coxir"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="team-content">
+                            <span class="team-role">
+                                DISCENTE DE COMPUTAÇÃO
+                            </span>
+
+                            <h3>Matheus Coxir</h3>
+
+                            <p>
+                                Atua no desenvolvimento do processamento de rede,
+                                filtragem de conteúdos e integração dos módulos
+                                de proteção.
+                            </p>
+
+                            <div class="team-tags">
+                                <span>Redes</span>
+                                <span>Software</span>
+                                <span>Segurança</span>
+                            </div>
+
+                            <div class="team-links">
+
+                                <a
+                                    href="http://lattes.cnpq.br/0513325822855362"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Currículo Lattes"
+                                    aria-label="Currículo Lattes de Matheus Coxir"
+                                >
+                                    <img
+                                        src="assets/img/icons/lattes.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                                <a
+                                    href="https://orcid.org/0009-0008-8121-8277"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="ORCID"
+                                    aria-label="ORCID de Matheus Coxir"
+                                >
+                                    <img
+                                        src="assets/img/icons/orcid.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                                <a
+                                    href="https://github.com/MatheusSCxr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="GitHub"
+                                    aria-label="GitHub de Matheus Coxir"
+                                >
+                                    <img
+                                        src="assets/img/icons/github.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- HUMBERTO -->
+
+                    <article class="team-card">
+                        <div class="team-photo">
+                            <img
+                                src="assets/img/avatar/humberto-marques.png"
+                                alt="Foto de Humberto Marques"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="team-content">
+                            <span class="team-role">
+                                PROFESSOR ORIENTADOR
+                            </span>
+
+                            <h3>Humberto Marques</h3>
+
+                            <p>
+                                Professor orientador e supervisor técnico,
+                                responsável pelo acompanhamento acadêmico e
+                                validação do projeto.
+                            </p>
+
+                            <div class="team-tags">
+                                <span>Orientação</span>
+                                <span>Tecnologia</span>
+                                <span>Pesquisa</span>
+                            </div>
+
+                            <div class="team-links">
+
+                                <a
+                                    href="http://lattes.cnpq.br/0898459356361957"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="Currículo Lattes"
+                                    aria-label="Currículo Lattes de Humberto Marques"
+                                >
+                                    <img
+                                        src="assets/img/icons/lattes.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                                <a
+                                    href="https://orcid.org/0000-0002-3164-8323"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="ORCID"
+                                    aria-label="ORCID de Humberto Marques"
+                                >
+                                    <img
+                                        src="assets/img/icons/orcid.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                                <a
+                                    href="https://github.com/HubSeAILab"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title="GitHub"
+                                    aria-label="GitHub de Humberto Marques"
+                                >
+                                    <img
+                                        src="assets/img/icons/github.png"
+                                        alt=""
+                                        loading="lazy"
+                                    >
+                                </a>
+
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             STACK
+        ====================================================== -->
+
+        <section class="stack-section">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">STACK</span>
+
+                    <h2>Tecnologias utilizadas.</h2>
+                </div>
+
+                <div class="stack-grid">
+
+                    <article class="stack-card">
+                        <span>01</span>
+                        <h3>Hardware</h3>
+
+                        <p>
+                            ESP32, comunicação de rede, sensores e
+                            componentes eletrônicos.
+                        </p>
+                    </article>
+
+                    <article class="stack-card">
+                        <span>02</span>
+                        <h3>Web</h3>
+
+                        <p>
+                            HTML5, CSS3 e JavaScript para interfaces
+                            e experiências responsivas.
+                        </p>
+                    </article>
+
+                    <article class="stack-card">
+                        <span>03</span>
+                        <h3>Extensão</h3>
+
+                        <p>
+                            APIs do navegador, armazenamento local e
+                            gerenciamento de políticas.
+                        </p>
+                    </article>
+
+                    <article class="stack-card">
+                        <span>04</span>
+                        <h3>Redes</h3>
+
+                        <p>
+                            Comunicação, filtragem, DNS e controle de
+                            tráfego conforme a arquitetura do projeto.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="about-cta">
+            <div class="about-cta-content">
+                <span class="section-label">PATRONUSNET</span>
+
+                <h2>
+                    Conheça a tecnologia
+                    <span>na prática.</span>
+                </h2>
+
+                <p>
+                    Explore o dispositivo portátil, conheça a extensão
+                    para navegador e descubra como os diferentes
+                    componentes do PatronusNet trabalham juntos.
+                </p>
+
+                <div class="cta-buttons">
+                    <a href="case.html" class="btn btn-primary">
+                        Conhecer dispositivo
                     </a>
-                    <a href="https://orcid.org/0000-0002-3164-8323" class="btn btn-icon" title="ORCID" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/orcid.png" alt="ORCID">
-                    </a>
-                    <a href="https://github.com/HubSeAILab" class="btn btn-icon" title="GitHub" target="_blank" rel="noreferrer">
-                        <img src="assets/img/icons/github.png" alt="GitHub">
+
+                    <a href="navegador.html" class="btn btn-secondary">
+                        Conhecer navegador
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="secao-tecnologias">
-            <h2 class="titulo-secao">Tecnologias Utilizadas</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <h4>Frontend</h4>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript (Vanilla)</li>
-                    </ul>
-                </div>
-                <div class="tech-item">
-                    <h4>Extensão</h4>
-                    <ul>
-                        <li>Chrome Extension API</li>
-                        <li>WebRequest API</li>
-                        <li>Storage API</li>
-                    </ul>
-                </div>
-                <div class="tech-item">
-                    <h4>Processamento</h4>
-                    <ul>
-                        <li>Filtragem de rede</li>
-                        <li>Análise de DNS</li>
-                        <li>Processamento em tempo real</li>
-                    </ul>
-                </div>
-                <div class="tech-item">
-                    <h4>Segurança</h4>
-                    <ul>
-                        <li>Criptografia local</li>
-                        <li>Proteção com senha</li>
-                        <li>Histórico seguro</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
     </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer>
         <div class="footer-content">
+
             <div class="footer-section">
                 <h4>PatronusNet</h4>
-                <p>Proteção digital e inteligente para sua rede.</p>
+
+                <p>
+                    Proteção digital inteligente para sua rede e dispositivos.
+                </p>
             </div>
+
             <div class="footer-section">
-                <h4>Links Rápidos</h4>
+                <h4>Produtos</h4>
+
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
+                    <li>
+                        <a href="case.html">Dispositivo</a>
+                    </li>
+
+                    <li>
+                        <a href="navegador.html">Navegador</a>
+                    </li>
                 </ul>
             </div>
+
             <div class="footer-section">
-                <h4>Redes Sociais</h4>
+                <h4>Institucional</h4>
+
                 <ul>
-                    <li><a href="https://github.com/rainbowcrack/patronusnet-site" target="_blank" rel="noreferrer">GitHub</a></li>
+                    <li>
+                        <a href="sobre-nos.html">Sobre Nós</a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://github.com/rainbowcrack/patronusnet-site"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </li>
                 </ul>
             </div>
+
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; <span id="ano"></span> PatronusNet. Todos os direitos reservados.</p>
-            <p>Projeto desenvolvido como trabalho acadêmico na PUC Minas.</p>
+            <p>
+                &copy;
+                <span id="ano"></span>
+                PatronusNet.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Projeto desenvolvido como trabalho acadêmico na PUC Minas.
+            </p>
         </div>
     </footer>
 
+    <!-- JS global -->
     <script src="assets/js/script.js"></script>
-    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+
+    <!-- JS específico -->
+    <script src="assets/js/sobre-nos.js"></script>
+
 </body>
+
 </html>
