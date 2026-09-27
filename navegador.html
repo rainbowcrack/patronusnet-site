@@ -2,204 +2,70 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="PatronusNet Browser: extensão para navegadores Chromium com bloqueio de sites, políticas personalizadas, controle por horário e processamento local."
+        content="Baixe a extensão PatronusNet para navegadores Chromium: controle parental por domínio e palavras-chave, com processamento local."
     >
 
     <meta
         name="keywords"
-        content="PatronusNet Browser, extensão, Chrome, Edge, Chromium, segurança, bloqueio de sites, proteção digital"
+        content="PatronusNet, download extensão, Chrome, Edge, Chromium, controle parental, bloqueio de sites"
     >
 
-    <meta
-        name="author"
-        content="PatronusNet"
-    >
+    <meta name="author" content="PatronusNet">
 
-    <meta
-        property="og:title"
-        content="PatronusNet Browser | Proteção Digital"
-    >
+    <meta property="og:title" content="Download | Extensão PatronusNet">
+    <meta property="og:description" content="Baixe e instale a extensão PatronusNet v3.4 no seu navegador Chromium.">
+    <meta property="og:type" content="website">
 
-    <meta
-        property="og:description"
-        content="Proteção e controle durante a navegação com processamento local."
-    >
+    <title>Download | Extensão PatronusNet</title>
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
 
-    <title>
-        PatronusNet Browser | Proteção Digital
-    </title>
-
-
-    <link
-        rel="shortcut icon"
-        href="assets/img/favi-icon.png"
-        type="image/png"
-    >
-
-
-    <link
-        rel="stylesheet"
-        href="assets/css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="assets/css/navegador.css"
-    >
-
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navegador.css">
 </head>
 
-
 <body>
-
 
     <!-- =====================================================
          HEADER
     ====================================================== -->
 
     <header class="site-header">
+        <nav class="nav-container" aria-label="Navegação principal">
 
-        <nav class="nav-container">
-
-
-            <a
-                href="index.html"
-                class="logo-txt"
-            >
-
-                <img
-                    src="assets/img/favi-icon.png"
-                    alt="PatronusNet"
-                    class="logo-icon"
-                >
-
-                <span>
-                    Patronus<span>Net</span>
-                </span>
-
+            <a href="index.html" class="logo-txt" aria-label="PatronusNet - Página inicial">
+                <img src="assets/img/favi-icon.png" alt="" class="logo-icon">
+                <span>Patronus<span>Net</span></span>
             </a>
 
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <ul class="nav-links">
-
-
-                <li>
-
-                    <a href="index.html">
-                        Home
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="sobre-nos.html">
-                        Sobre Nós
-                    </a>
-
-                </li>
-
-
-                <li class="products-menu">
-
-
-                    <button
-                        class="products-trigger"
-                        type="button"
-                        aria-expanded="false"
-                    >
-
-                        Produtos
-
-                        <span class="products-arrow">
-                            ↓
-                        </span>
-
-                    </button>
-
-
-                    <div class="products-dropdown">
-
-
-                        <a
-                            href="case.html"
-                            class="product-option"
-                        >
-
-                            <span class="product-option-icon">
-                                ◈
-                            </span>
-
-                            <span>
-
-                                <strong>
-                                    Dispositivo
-                                </strong>
-
-                                <small>
-                                    Proteção portátil
-                                </small>
-
-                            </span>
-
-                        </a>
-
-
-                        <a
-                            href="navegador.html"
-                            class="product-option active"
-                        >
-
-                            <span class="product-option-icon browser-icon">
-                                ◉
-                            </span>
-
-                            <span>
-
-                                <strong>
-                                    Navegador
-                                </strong>
-
-                                <small>
-                                    Controle e proteção
-                                </small>
-
-                            </span>
-
-                        </a>
-
-
-                    </div>
-
-                </li>
-
-
+            <ul class="nav-links" id="main-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="como-funciona.html">Como Funciona</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="navegador.html" class="nav-cta active" aria-current="page">Download</a></li>
             </ul>
 
-
         </nav>
-
     </header>
 
-
     <main>
-
 
         <!-- =====================================================
              HERO
@@ -207,1064 +73,408 @@
 
         <section class="browser-hero">
 
-
             <div class="browser-hero-orb orb-blue"></div>
-
             <div class="browser-hero-orb orb-cyan"></div>
-
 
             <div class="browser-hero-content">
 
-
-                <span class="hero-kicker">
-                    PATRONUSNET BROWSER
-                </span>
-
+                <span class="hero-kicker">PATRONUSNET BROWSER · v3.4</span>
 
                 <h1>
-
-                    Mais controle.
-
-                    <span>
-                        Mais proteção.
-                    </span>
-
+                    Baixe e instale.
+                    <span>Proteja em minutos.</span>
                 </h1>
 
-
                 <p>
-
-                    Uma extensão para navegadores Chromium
-                    desenvolvida para adicionar uma camada
-                    de controle, filtragem e proteção à
-                    experiência de navegação.
-
+                    A extensão PatronusNet para navegadores Chromium adiciona
+                    controle parental por domínio, por palavras-chave e por
+                    conteúdo com IA local, tudo com processamento local e uma
+                    interface simples de configurar.
                 </p>
-
-
-                <div class="browser-hero-price">
-
-                    <span>
-                        Extensão PatronusNet
-                    </span>
-
-                    <strong>
-                        R$ 79,90
-                    </strong>
-
-                    <small>
-                        Compra única
-                    </small>
-
-                </div>
-
 
                 <div class="hero-actions">
-
-
-                    <a
-                        href="#comprar"
-                        class="btn btn-primary"
-                    >
-                        Adquirir extensão
+                    <a href="#download" class="btn btn-primary">
+                        Ir para o download
                     </a>
 
-
-                    <a
-                        href="#recursos"
-                        class="btn btn-secondary"
-                    >
-                        Conhecer recursos
+                    <a href="como-funciona.html" class="btn btn-secondary">
+                        Como funciona
                     </a>
-
-
                 </div>
-
 
                 <div class="browser-compatible">
-
-                    <span>
-                        Compatível com navegadores Chromium
-                    </span>
+                    <span>Compatível com navegadores Chromium</span>
 
                     <div class="browser-badges">
-
-                        <span>
-                            Chrome
-                        </span>
-
-                        <span>
-                            Microsoft Edge
-                        </span>
-
-                        <span>
-                            Outros Chromium
-                        </span>
-
+                        <span>Chrome</span>
+                        <span>Microsoft Edge</span>
+                        <span>Outros Chromium</span>
                     </div>
-
                 </div>
 
-
             </div>
-
-
-            <!-- =================================================
-                 CARD FLUTUANTE
-            ================================================== -->
 
             <div class="hero-visual">
-
-
                 <div class="hero-card">
-
-
                     <img
                         src="assets/img/browser/popup.png"
-                        alt="Interface do PatronusNet Browser"
+                        alt="Interface do popup da extensão PatronusNet"
                         class="hero-browser-popup"
                     >
-
-
                 </div>
-
-
             </div>
-
 
             <div class="hero-scroll">
-
-                <span>
-                    Explore
-                </span>
-
+                <span>Explore</span>
                 <div></div>
-
             </div>
 
-
         </section>
-
-
-        <!-- =====================================================
-             INTRO
-        ====================================================== -->
-
-        <section class="browser-intro">
-
-
-            <div class="section-inner">
-
-
-                <span class="section-label">
-                    PATRONUSNET BROWSER
-                </span>
-
-
-                <h2>
-
-                    Proteção diretamente
-
-                    <span>
-                        durante a navegação.
-                    </span>
-
-                </h2>
-
-
-                <p>
-
-                    O PatronusNet Browser funciona como uma
-                    camada adicional de proteção no navegador,
-                    permitindo configurar regras e acompanhar
-                    a experiência de navegação de forma simples.
-
-                </p>
-
-
-            </div>
-
-
-        </section>
-
 
         <!-- =====================================================
              RECURSOS
         ====================================================== -->
 
-        <section
-            class="browser-resources"
-            id="recursos"
-        >
-
-
+        <section class="browser-resources" id="recursos">
             <div class="section-inner">
 
-
                 <div class="section-heading">
-
-
-                    <span class="section-label">
-                        RECURSOS
-                    </span>
-
+                    <span class="section-label">RECURSOS</span>
 
                     <h2>
-
-                        Controle pensado
-
-                        <span>
-                            para sua rotina.
-                        </span>
-
+                        O que a extensão
+                        <span>faz por você.</span>
                     </h2>
 
-
                     <p>
-
-                        Recursos desenvolvidos para facilitar
-                        a configuração das políticas de proteção.
-
+                        Recursos desenvolvidos para facilitar a configuração
+                        das políticas de proteção.
                     </p>
-
-
                 </div>
-
 
                 <div class="resources-grid">
 
-
                     <article class="resource-card">
-
-
-                        <div class="resource-number">
-                            01
-                        </div>
-
-
-                        <div class="resource-icon">
-                            ◈
-                        </div>
-
-
-                        <h3>
-                            Bloqueio de sites
-                        </h3>
-
-
+                        <div class="resource-number">01</div>
+                        <div class="resource-icon">◈</div>
+                        <h3>Bloqueio por domínio</h3>
                         <p>
-
-                            Defina domínios e conteúdos que
-                            devem ser bloqueados durante
+                            Defina os domínios que devem ser bloqueados durante
                             a navegação.
-
                         </p>
-
-
                     </article>
-
 
                     <article class="resource-card">
-
-
-                        <div class="resource-number">
-                            02
-                        </div>
-
-
-                        <div class="resource-icon">
-                            ✦
-                        </div>
-
-
-                        <h3>
-                            Moderação
-                        </h3>
-
-
+                        <div class="resource-number">02</div>
+                        <div class="resource-icon">🏷️</div>
+                        <h3>Bloqueio por palavras-chave</h3>
                         <p>
-
-                            Utilize regras de moderação para
-                            auxiliar no controle do conteúdo
-                            acessado.
-
+                            Cadastre palavras (tags) e a extensão bloqueia páginas
+                            cujo texto ou endereço contenha esses termos.
                         </p>
-
-
                     </article>
-
 
                     <article class="resource-card">
-
-
-                        <div class="resource-number">
-                            03
-                        </div>
-
-
-                        <div class="resource-icon">
-                            ◷
-                        </div>
-
-
-                        <h3>
-                            Controle por horário
-                        </h3>
-
-
+                        <div class="resource-number">03</div>
+                        <div class="resource-icon">◷</div>
+                        <h3>Agendamento</h3>
                         <p>
-
-                            Defina períodos em que determinadas
-                            políticas de proteção devem permanecer
-                            ativas.
-
+                            Defina os dias da semana e o horário em que a proteção
+                            deve ser ativada automaticamente.
                         </p>
-
-
                     </article>
-
 
                     <article class="resource-card">
-
-
-                        <div class="resource-number">
-                            04
-                        </div>
-
-
-                        <div class="resource-icon">
-                            ◎
-                        </div>
-
-
-                        <h3>
-                            Configuração simples
-                        </h3>
-
-
+                        <div class="resource-number">04</div>
+                        <div class="resource-icon">🔑</div>
+                        <h3>Senha parental</h3>
                         <p>
-
-                            Interface organizada para configurar
-                            regras e visualizar o funcionamento
-                            da extensão.
-
+                            Proteja as configurações e o desbloqueio de páginas com
+                            uma senha, evitando alterações não autorizadas.
                         </p>
-
-
                     </article>
-
 
                     <article class="resource-card">
-
-
-                        <div class="resource-number">
-                            05
-                        </div>
-
-
-                        <div class="resource-icon">
-                            🐢
-                        </div>
-
-
-                        <h3>
-                            Modo Tartaruga
-                        </h3>
-
-
+                        <div class="resource-number">05</div>
+                        <div class="resource-icon">📊</div>
+                        <h3>Histórico e dashboard</h3>
                         <p>
-
-                            Recurso experimental voltado para
-                            reduzir determinados sinais de
-                            identificação durante a navegação.
-
+                            Acompanhe os bloqueios recentes e veja um panorama da
+                            proteção dos últimos dias, com exportação em CSV.
                         </p>
-
-
                     </article>
-
 
                     <article class="resource-card">
-
-
-                        <div class="resource-number">
-                            06
-                        </div>
-
-
-                        <div class="resource-icon">
-                            🔒
-                        </div>
-
-
-                        <h3>
-                            Processamento local
-                        </h3>
-
-
+                        <div class="resource-number">06</div>
+                        <div class="resource-icon">🔧</div>
+                        <h3>Guia do roteador</h3>
                         <p>
-
-                            A arquitetura prioriza o processamento
-                            local sempre que possível, reduzindo
-                            a dependência de serviços externos.
-
+                            Um assistente visual ajuda a configurar o DNS de
+                            proteção direto no painel do seu roteador.
                         </p>
-
-
                     </article>
 
+                    <article class="resource-card">
+                        <div class="resource-number">07</div>
+                        <div class="resource-icon">🤖</div>
+                        <h3>IA local (beta)</h3>
+                        <p>
+                            Classificação semântica de conteúdo rodando 100% no
+                            navegador (Transformers.js / ONNX): oculta trechos com
+                            possível discurso de ódio em fóruns e notícias sem
+                            enviar o texto das páginas para servidores externos.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">08</div>
+                        <div class="resource-icon">🕵️</div>
+                        <h3>Modo furtivo</h3>
+                        <p>
+                            Bloqueia sem exibir a tela do PatronusNet e mantém um
+                            registro local das páginas visitadas, para
+                            acompanhamento discreto.
+                        </p>
+                    </article>
 
                 </div>
-
-
             </div>
-
-
         </section>
-
-
-        <!-- =====================================================
-             TECNOLOGIA
-        ====================================================== -->
-
-        <section class="technology-section">
-
-
-            <div class="section-inner">
-
-
-                <div class="technology-layout">
-
-
-                    <div class="technology-content">
-
-
-                        <span class="section-label">
-                            TECNOLOGIA
-                        </span>
-
-
-                        <h2>
-
-                            Construído sobre
-
-                            <span>
-                                tecnologias modernas.
-                            </span>
-
-                        </h2>
-
-
-                        <p>
-
-                            O PatronusNet Browser utiliza as
-                            APIs disponibilizadas pelo ecossistema
-                            de extensões Chromium para integrar
-                            recursos de controle diretamente
-                            ao navegador.
-
-                        </p>
-
-
-                        <div class="technology-list">
-
-
-                            <div class="technology-item">
-
-                                <span>
-                                    01
-                                </span>
-
-                                <div>
-
-                                    <strong>
-                                        Chromium
-                                    </strong>
-
-                                    <p>
-                                        Arquitetura compatível
-                                        com navegadores baseados
-                                        em Chromium.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="technology-item">
-
-                                <span>
-                                    02
-                                </span>
-
-                                <div>
-
-                                    <strong>
-                                        APIs de extensão
-                                    </strong>
-
-                                    <p>
-                                        Integração com recursos
-                                        disponibilizados pelos
-                                        navegadores compatíveis.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="technology-item">
-
-                                <span>
-                                    03
-                                </span>
-
-                                <div>
-
-                                    <strong>
-                                        JavaScript
-                                    </strong>
-
-                                    <p>
-                                        Lógica da extensão e
-                                        gerenciamento das regras
-                                        de proteção.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="technology-panel">
-
-
-                        <div class="tech-panel-header">
-
-                            <span>
-                                PATRONUSNET
-                            </span>
-
-                            <span class="tech-status">
-                                ● LOCAL
-                            </span>
-
-                        </div>
-
-
-                        <div class="tech-panel-content">
-
-                            <div class="tech-code-line">
-                                <span>01</span>
-                                <span>policy</span>
-                                <strong>active</strong>
-                            </div>
-
-                            <div class="tech-code-line">
-                                <span>02</span>
-                                <span>filter</span>
-                                <strong>enabled</strong>
-                            </div>
-
-                            <div class="tech-code-line">
-                                <span>03</span>
-                                <span>storage</span>
-                                <strong>local</strong>
-                            </div>
-
-                            <div class="tech-code-line">
-                                <span>04</span>
-                                <span>network</span>
-                                <strong>protected</strong>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-        <!-- =====================================================
-             VÍDEO
-        ====================================================== -->
-
-        <section class="video-section">
-
-
-            <div class="section-inner">
-
-
-                <div class="section-heading">
-
-
-                    <span class="section-label">
-                        NA PRÁTICA
-                    </span>
-
-
-                    <h2>
-
-                        Veja o PatronusNet
-
-                        <span>
-                            em funcionamento.
-                        </span>
-
-                    </h2>
-
-
-                    <p>
-
-                        Conheça rapidamente a interface e
-                        alguns dos recursos disponíveis
-                        na extensão.
-
-                    </p>
-
-
-                </div>
-
-
-                <div class="video-wrapper">
-
-
-                    <video
-                        class="extension-video"
-                        controls
-                        preload="metadata"
-                        poster="assets/img/browser/popup.png"
-                    >
-
-                        <source
-                            src="assets/video/navegador.mp4"
-                            type="video/mp4"
-                        >
-
-                        Seu navegador não suporta
-                        reprodução de vídeo.
-
-                    </video>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-        <!-- =====================================================
-             SEGURANÇA
-        ====================================================== -->
-
-        <section class="security-section">
-
-
-            <div class="section-inner">
-
-
-                <div class="security-card">
-
-
-                    <div class="security-icon">
-                        ◉
-                    </div>
-
-
-                    <div class="security-content">
-
-
-                        <span class="section-label">
-                            SEGURANÇA
-                        </span>
-
-
-                        <h2>
-
-                            Seus dados.
-
-                            <span>
-                                Seu ambiente.
-                            </span>
-
-                        </h2>
-
-
-                        <p>
-
-                            O PatronusNet prioriza o processamento
-                            local sempre que possível. A proposta
-                            é reduzir a necessidade de enviar
-                            informações de navegação para serviços
-                            externos e manter maior controle sobre
-                            os dados utilizados pela solução.
-
-                        </p>
-
-
-                        <div class="security-points">
-
-
-                            <span>
-                                ✓ Processamento local
-                            </span>
-
-
-                            <span>
-                                ✓ Configurações armazenadas localmente
-                            </span>
-
-
-                            <span>
-                                ✓ Controle das políticas pelo usuário
-                            </span>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
 
         <!-- =====================================================
              COMPATIBILIDADE
         ====================================================== -->
 
         <section class="compatibility-section">
-
-
             <div class="section-inner">
 
-
                 <div class="section-heading">
-
-
-                    <span class="section-label">
-                        COMPATIBILIDADE
-                    </span>
-
+                    <span class="section-label">COMPATIBILIDADE</span>
 
                     <h2>
-
                         Feito para o
-
-                        <span>
-                            ecossistema Chromium.
-                        </span>
-
+                        <span>ecossistema Chromium.</span>
                     </h2>
 
-
                     <p>
-
-                        O PatronusNet Browser foi projetado
-                        para navegadores baseados no projeto
-                        Chromium.
-
+                        A extensão foi projetada para navegadores baseados no
+                        projeto Chromium.
                     </p>
-
-
                 </div>
-
 
                 <div class="compatibility-grid">
 
-
                     <div class="compatibility-card">
-
-                        <div class="compatibility-logo">
-                            C
-                        </div>
-
-                        <h3>
-                            Google Chrome
-                        </h3>
-
-                        <p>
-                            Navegador principal para utilização
-                            da extensão.
-                        </p>
-
+                        <div class="compatibility-logo">C</div>
+                        <h3>Google Chrome</h3>
+                        <p>Navegador principal para utilização da extensão.</p>
                     </div>
 
-
                     <div class="compatibility-card">
-
-                        <div class="compatibility-logo edge">
-                            E
-                        </div>
-
-                        <h3>
-                            Microsoft Edge
-                        </h3>
-
-                        <p>
-                            Compatível com o ecossistema
-                            de extensões Chromium.
-                        </p>
-
+                        <div class="compatibility-logo edge">E</div>
+                        <h3>Microsoft Edge</h3>
+                        <p>Compatível com o ecossistema de extensões Chromium.</p>
                     </div>
 
-
                     <div class="compatibility-card">
-
-                        <div class="compatibility-logo chromium">
-                            ◈
-                        </div>
-
-                        <h3>
-                            Outros Chromium
-                        </h3>
-
-                        <p>
-                            Compatibilidade pode variar
-                            conforme o navegador e suas APIs.
-                        </p>
-
+                        <div class="compatibility-logo chromium">◈</div>
+                        <h3>Outros Chromium</h3>
+                        <p>A compatibilidade pode variar conforme o navegador.</p>
                     </div>
-
 
                 </div>
-
-
             </div>
-
-
         </section>
-
 
         <!-- =====================================================
-             COMPRA
+             DOWNLOAD
         ====================================================== -->
 
-        <section
-            class="purchase-section"
-            id="comprar"
-        >
-
-
+        <section class="purchase-section" id="download">
             <div class="purchase-content">
-
-
-                <span class="section-label">
-                    PATRONUSNET BROWSER
-                </span>
-
+                <span class="section-label">DOWNLOAD · VERSÃO 3.4</span>
 
                 <h2>
-
-                    Proteção inteligente
-
-                    <span>
-                        no seu navegador.
-                    </span>
-
+                    Baixe a extensão
+                    <span>PatronusNet.</span>
                 </h2>
 
-
                 <p>
-
-                    Adquira a extensão diretamente pela
-                    loja oficial do navegador compatível.
-
+                    O download é um arquivo <strong>.zip</strong> com os arquivos
+                    da extensão. Basta extrair e carregar em modo desenvolvedor,
+                    seguindo os passos abaixo.
                 </p>
 
-
-                <div class="purchase-price">
-
-                    <small>
-                        Compra única
-                    </small>
-
-                    <strong>
-                        R$ 79,90
-                    </strong>
-
-                </div>
-
-
                 <div class="purchase-buttons">
-
-
-                    <a
-                        href="#"
-                        class="btn btn-primary"
-                    >
-                        Loja do Chrome
+                    <a href="code/patronusnet-browser-v3.4.zip" class="btn btn-primary" download>
+                        Baixar extensão (v3.4)
                     </a>
 
-
-                    <a
-                        href="#"
-                        class="btn btn-secondary"
-                    >
-                        Loja do Edge
+                    <a href="#instalacao" class="btn btn-secondary">
+                        Ver instruções
                     </a>
-
-
                 </div>
-
 
                 <small class="purchase-note">
-
-                    Os links para as lojas oficiais serão
-                    disponibilizados conforme a publicação
-                    da extensão.
-
+                    Gratuito. Compatível com Google Chrome, Microsoft Edge e
+                    outros navegadores baseados em Chromium.
                 </small>
-
-
             </div>
-
-
         </section>
 
+        <!-- =====================================================
+             INSTALAÇÃO
+        ====================================================== -->
+
+        <section class="technology-section" id="instalacao">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">INSTALAÇÃO</span>
+
+                    <h2>
+                        Instalar em
+                        <span>poucos passos.</span>
+                    </h2>
+
+                    <p>
+                        Para instalar manualmente a partir do arquivo .zip em
+                        modo desenvolvedor:
+                    </p>
+                </div>
+
+                <div class="technology-list" style="max-width: 760px; margin: 0 auto;">
+
+                    <div class="technology-item">
+                        <span>01</span>
+                        <div>
+                            <strong>Baixe e extraia o .zip</strong>
+                            <p>Descompacte o arquivo da extensão em uma pasta do seu computador.</p>
+                        </div>
+                    </div>
+
+                    <div class="technology-item">
+                        <span>02</span>
+                        <div>
+                            <strong>Abra as extensões do navegador</strong>
+                            <p>Acesse chrome://extensions (ou edge://extensions).</p>
+                        </div>
+                    </div>
+
+                    <div class="technology-item">
+                        <span>03</span>
+                        <div>
+                            <strong>Ative o Modo do desenvolvedor</strong>
+                            <p>Use o botão no canto superior da página de extensões.</p>
+                        </div>
+                    </div>
+
+                    <div class="technology-item">
+                        <span>04</span>
+                        <div>
+                            <strong>Carregue sem compactação</strong>
+                            <p>Clique em "Carregar sem compactação" e selecione a pasta extraída.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SEGURANÇA
+        ====================================================== -->
+
+        <section class="security-section">
+            <div class="section-inner">
+
+                <div class="security-card">
+                    <div class="security-icon">◉</div>
+
+                    <div class="security-content">
+                        <span class="section-label">SEGURANÇA</span>
+
+                        <h2>
+                            Seus dados.
+                            <span>Seu ambiente.</span>
+                        </h2>
+
+                        <p>
+                            O PatronusNet prioriza o processamento local sempre
+                            que possível. A proposta é reduzir a necessidade de
+                            enviar informações de navegação para serviços externos
+                            e manter maior controle sobre os dados utilizados.
+                        </p>
+
+                        <div class="security-points">
+                            <span>✓ Processamento local</span>
+                            <span>✓ Configurações armazenadas localmente</span>
+                            <span>✓ Controle das políticas pelo usuário</span>
+                            <span>✓ IA executada no navegador, sem enviar o texto das páginas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
-
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
 
     <footer>
-
-
         <div class="footer-content">
 
-
             <div class="footer-section">
-
-                <h4>
-                    PatronusNet
-                </h4>
-
+                <h4>PatronusNet</h4>
                 <p>
-                    Proteção digital inteligente
-                    para sua rede e dispositivos.
+                    Extensão de navegador para controle parental por
+                    domínio e palavras-chave.
                 </p>
-
             </div>
 
-
             <div class="footer-section">
-
-                <h4>
-                    Produtos
-                </h4>
-
+                <h4>Extensão</h4>
                 <ul>
-
-                    <li>
-                        <a href="case.html">
-                            Dispositivo
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="navegador.html">
-                            Navegador
-                        </a>
-                    </li>
-
+                    <li><a href="como-funciona.html">Como funciona</a></li>
+                    <li><a href="navegador.html#download">Download</a></li>
                 </ul>
-
             </div>
 
-
             <div class="footer-section">
-
-                <h4>
-                    Institucional
-                </h4>
-
+                <h4>Institucional</h4>
                 <ul>
-
-                    <li>
-                        <a href="sobre-nos.html">
-                            Sobre Nós
-                        </a>
-                    </li>
-
+                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
                     <li>
                         <a
                             href="https://github.com/rainbowcrack/patronusnet-site"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                         >
                             GitHub
                         </a>
                     </li>
-
                 </ul>
-
             </div>
 
-
         </div>
-
 
         <div class="footer-bottom">
-
             <p>
-
                 &copy;
-
                 <span id="ano"></span>
-
                 PatronusNet.
-
                 Todos os direitos reservados.
-
             </p>
-
 
             <p>
-
-                Projeto desenvolvido como trabalho
-                acadêmico na PUC Minas.
-
+                Projeto desenvolvido como trabalho acadêmico na PUC Minas.
             </p>
-
-
         </div>
-
-
     </footer>
 
-
     <script src="assets/js/script.js"></script>
-
-    <script src="assets/js/navegador.js"></script>
-
 
 </body>
 

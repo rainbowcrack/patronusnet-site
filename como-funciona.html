@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Entenda como funciona a extensão PatronusNet: controle parental por domínio e palavras-chave em navegadores Chromium."
+    >
+
+    <meta
+        name="keywords"
+        content="PatronusNet, como funciona, controle parental, extensão, Chromium, bloqueio de domínio, palavras-chave"
+    >
+
+    <meta name="author" content="PatronusNet">
+
+    <meta property="og:title" content="Como Funciona | Extensão PatronusNet">
+    <meta property="og:description" content="Como a extensão PatronusNet aplica controle parental por domínio e palavras-chave.">
+    <meta property="og:type" content="website">
+
+    <title>Como Funciona | Extensão PatronusNet</title>
+
+    <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navegador.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+        <nav class="nav-container" aria-label="Navegação principal">
+
+            <a href="index.html" class="logo-txt" aria-label="PatronusNet - Página inicial">
+                <img src="assets/img/favi-icon.png" alt="" class="logo-icon">
+                <span>Patronus<span>Net</span></span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="main-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="como-funciona.html" class="active" aria-current="page">Como Funciona</a></li>
+                <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                <li><a href="navegador.html" class="nav-cta">Download</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="browser-intro" style="padding-top: 160px;">
+            <div class="section-inner">
+                <span class="section-label">COMO FUNCIONA · v3.4</span>
+
+                <h2>
+                    Controle parental
+                    <span>que trabalha em segundo plano.</span>
+                </h2>
+
+                <p>
+                    A extensão PatronusNet acompanha a navegação e aplica as
+                    políticas de proteção em vários níveis: bloqueio por domínio,
+                    bloqueio por palavras-chave presentes na página e uma camada
+                    de IA local que analisa o conteúdo em busca de discurso de
+                    ódio. Tudo é configurado pelo próprio usuário e processado
+                    localmente.
+                </p>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             ETAPAS
+        ====================================================== -->
+
+        <section class="browser-resources">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">FLUXO DE PROTEÇÃO</span>
+
+                    <h2>
+                        Do acesso à página
+                        <span>à decisão da política.</span>
+                    </h2>
+
+                    <p>
+                        Cada vez que uma página é aberta, a extensão executa
+                        as seguintes etapas.
+                    </p>
+                </div>
+
+                <div class="resources-grid">
+
+                    <article class="resource-card">
+                        <div class="resource-number">01</div>
+                        <div class="resource-icon">◈</div>
+                        <h3>Verificação de domínio</h3>
+                        <p>
+                            Ao navegar, a extensão observa o endereço acessado e
+                            compara com as regras de domínios definidas nas
+                            configurações.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">02</div>
+                        <div class="resource-icon">🏷️</div>
+                        <h3>Busca por palavras-chave</h3>
+                        <p>
+                            Um script de conteúdo procura as palavras (tags)
+                            cadastradas no texto e no endereço da página aberta.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">03</div>
+                        <div class="resource-icon">🤖</div>
+                        <h3>Classificação por IA local</h3>
+                        <p>
+                            Em fóruns e notícias, um classificador semântico roda
+                            no próprio navegador e avalia trechos de texto que
+                            passam por um pré-filtro, ocultando conteúdo com
+                            possível discurso de ódio.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">04</div>
+                        <div class="resource-icon">◷</div>
+                        <h3>Regras por horário</h3>
+                        <p>
+                            Conforme o agendamento, a proteção é ativada
+                            automaticamente nos dias e horários definidos.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">05</div>
+                        <div class="resource-icon">🛡</div>
+                        <h3>Bloqueio da página</h3>
+                        <p>
+                            Se alguma regra corresponder, a extensão exibe uma
+                            tela de bloqueio, que só é liberada com a senha
+                            parental (quando configurada). No modo furtivo, o
+                            bloqueio é silencioso e a visita é apenas registrada
+                            localmente.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             COMPONENTES
+        ====================================================== -->
+
+        <section class="technology-section">
+            <div class="section-inner">
+
+                <div class="technology-layout">
+
+                    <div class="technology-content">
+                        <span class="section-label">POR DENTRO DA EXTENSÃO</span>
+
+                        <h2>
+                            Componentes que
+                            <span>fazem tudo funcionar.</span>
+                        </h2>
+
+                        <p>
+                            A PatronusNet é construída sobre o Manifest V3 do
+                            Chromium e organiza a proteção em partes bem definidas.
+                        </p>
+
+                        <div class="technology-list">
+
+                            <div class="technology-item">
+                                <span>01</span>
+                                <div>
+                                    <strong>Service worker (background)</strong>
+                                    <p>
+                                        Coordena a lógica da extensão, observa a
+                                        navegação e gerencia as políticas ativas.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="technology-item">
+                                <span>02</span>
+                                <div>
+                                    <strong>Script de conteúdo</strong>
+                                    <p>
+                                        Executado nas páginas para procurar os
+                                        termos cadastrados e exibir a tela de
+                                        bloqueio quando necessário.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="technology-item">
+                                <span>03</span>
+                                <div>
+                                    <strong>Popup e página de opções</strong>
+                                    <p>
+                                        Interfaces para configurar domínios, tags,
+                                        agendamento, senha e ver o histórico de
+                                        bloqueios.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="technology-item">
+                                <span>04</span>
+                                <div>
+                                    <strong>Classificador de IA local</strong>
+                                    <p>
+                                        Um módulo baseado em Transformers.js /
+                                        ONNX executa no navegador. O modelo é
+                                        baixado uma única vez e fica em cache; o
+                                        texto das páginas nunca é enviado para
+                                        servidores externos.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="technology-item">
+                                <span>05</span>
+                                <div>
+                                    <strong>Armazenamento local</strong>
+                                    <p>
+                                        As configurações ficam guardadas no próprio
+                                        navegador, priorizando o processamento local.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="technology-panel">
+                        <div class="tech-panel-header">
+                            <span>PATRONUSNET · v3.4</span>
+                            <span class="tech-status">● LOCAL</span>
+                        </div>
+
+                        <div class="tech-panel-content">
+                            <div class="tech-code-line">
+                                <span>01</span>
+                                <span>manifest</span>
+                                <strong>v3</strong>
+                            </div>
+                            <div class="tech-code-line">
+                                <span>02</span>
+                                <span>domain</span>
+                                <strong>checked</strong>
+                            </div>
+                            <div class="tech-code-line">
+                                <span>03</span>
+                                <span>keywords</span>
+                                <strong>scanned</strong>
+                            </div>
+                            <div class="tech-code-line">
+                                <span>04</span>
+                                <span>ai_model</span>
+                                <strong>on-device</strong>
+                            </div>
+                            <div class="tech-code-line">
+                                <span>05</span>
+                                <span>storage</span>
+                                <strong>local</strong>
+                            </div>
+                            <div class="tech-code-line">
+                                <span>06</span>
+                                <span>policy</span>
+                                <strong>applied</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             PERMISSÕES
+        ====================================================== -->
+
+        <section class="browser-resources" style="background: #07101d;">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">PERMISSÕES</span>
+
+                    <h2>
+                        Por que a extensão
+                        <span>pede cada acesso.</span>
+                    </h2>
+
+                    <p>
+                        Transparência sobre as permissões declaradas no
+                        manifesto da extensão.
+                    </p>
+                </div>
+
+                <div class="resources-grid">
+
+                    <article class="resource-card">
+                        <div class="resource-icon">◎</div>
+                        <h3>storage</h3>
+                        <p>Guardar as configurações e políticas localmente.</p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-icon">◷</div>
+                        <h3>alarms</h3>
+                        <p>Aplicar regras que dependem de horários e períodos.</p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-icon">◈</div>
+                        <h3>tabs / webNavigation</h3>
+                        <p>Observar a navegação para verificar os domínios acessados.</p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-icon">🛡</div>
+                        <h3>declarativeNetRequest</h3>
+                        <p>Bloquear ou redirecionar domínios diretamente na camada de rede.</p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-icon">✦</div>
+                        <h3>host_permissions (&lt;all_urls&gt;)</h3>
+                        <p>Examinar o texto das páginas e aplicar a classificação por IA local.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="purchase-section" id="download">
+            <div class="purchase-content">
+                <span class="section-label">PRONTO PARA COMEÇAR?</span>
+
+                <h2>
+                    Instale a PatronusNet
+                    <span>e configure sua proteção.</span>
+                </h2>
+
+                <p>
+                    Baixe a versão 3.4 e configure as políticas conforme a
+                    necessidade do seu ambiente.
+                </p>
+
+                <div class="purchase-buttons">
+                    <a href="navegador.html#download" class="btn btn-primary">
+                        Ir para o download
+                    </a>
+
+                    <a href="index.html" class="btn btn-secondary">
+                        Voltar para a home
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h4>PatronusNet</h4>
+                <p>
+                    Extensão de navegador para controle parental por
+                    domínio e palavras-chave.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Extensão</h4>
+                <ul>
+                    <li><a href="como-funciona.html">Como funciona</a></li>
+                    <li><a href="navegador.html#download">Download</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="sobre-nos.html">Sobre Nós</a></li>
+                    <li>
+                        <a
+                            href="https://github.com/rainbowcrack/patronusnet-site"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy;
+                <span id="ano"></span>
+                PatronusNet.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Projeto desenvolvido como trabalho acadêmico na PUC Minas.
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
