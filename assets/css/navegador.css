@@ -2062,3 +2062,27 @@ body {
     }
 
 }
+
+
+/* =========================================================
+   NAVEGAÇÃO / LOGO — consistência entre as abas
+   (navegador.html e como-funciona.html usam este arquivo)
+========================================================= */
+
+/* Mantém o "Net" da logo na mesma cor azul usada nas demais páginas,
+   em vez de cair no cinza padrão do style.css global. */
+.logo-txt > span > span {
+    color: var(--browser-blue-light);
+}
+
+/* Estado ativo do item de menu com o mesmo azul da marca. */
+.nav-links a.active {
+    color: var(--browser-blue-light);
+    background: rgba(56, 189, 248, 0.10);
+}
+
+/* O botão de Download (CTA) mantém o visual claro mesmo quando ativo. */
+.nav-links a.nav-cta.active {
+    color: #080a0c;
+    background: #fff;
+}
