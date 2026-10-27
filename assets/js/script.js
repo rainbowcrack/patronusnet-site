@@ -1,73 +1,105 @@
-// animacao de grafos 
-const canvas = document.getElementById('canvas-grafos');
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let pontos = [];
-    const maxPontos = 45; 
+/* =========================================================
+   PATRONUSNET — SCRIPT GLOBAL
+   Navegação, menu mobile e utilidades comuns.
+========================================================= */
 
-    function redimensionar() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', redimensionar);
-    redimensionar();
+document.addEventListener("DOMContentLoaded", () => {
 
-    class Ponto {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.vx = (Math.random() - 0.5) * 0.4;
-            this.vy = (Math.random() - 0.5) * 0.4;
-            this.raio = Math.random() * 2 + 1;
-        }
-        atualizar() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-        }
-        desenhar() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.raio, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(56, 189, 248, 0.3)';
-            ctx.fill();
-        }
+    /* =====================================================
+       ANO DO FOOTER
+    ===================================================== */
+
+    const ano = document.getElementById("ano");
+
+    if (ano) {
+        ano.textContent = new Date().getFullYear();
     }
 
-    for (let i = 0; i < maxPontos; i++) {
-        pontos.push(new Ponto());
-    }
 
-    function animar() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // desenha as arestas
-        for (let i = 0; i < pontos.length; i++) {
-            for (let j = i + 1; j < pontos.length; j++) {
-                const dist = Math.hypot(pontos[i].x - pontos[j].x, pontos[i].y - pontos[j].y);
-                if (dist < 120) {
-                    ctx.beginPath();
-                    ctx.moveTo(pontos[i].x, pontos[i].y);
-                    ctx.lineTo(pontos[j].x, pontos[j].y);
-                    ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 - (dist / 120) * 0.15})`;
-                    ctx.lineWidth = 0.8;
-                    ctx.stroke();
-                }
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
+
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (navToggle && navLinks) {
+
+        const closeMenu = () => {
+            navToggle.classList.remove("active");
+            navLinks.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.setAttribute("aria-label", "Abrir menu");
+        };
+
+        navToggle.addEventListener("click", () => {
+            const isOpen = navToggle.classList.toggle("active");
+
+            navLinks.classList.toggle("open", isOpen);
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+            navToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Fechar menu" : "Abrir menu"
+            );
+        });
+
+        /* Fecha ao clicar num link */
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        /* Fecha ao clicar fora */
+        document.addEventListener("click", (event) => {
+            const insideNav = navLinks.contains(event.target);
+            const onToggle = navToggle.contains(event.target);
+
+            if (!insideNav && !onToggle) {
+                closeMenu();
             }
-            pontos[i].atualizar();
-            pontos[i].desenhar();
-        }
-        requestAnimationFrame(animar);
-    }
-    animar();
-}
+        });
 
-// dinamica do carrossel automatico 
-const trilha = document.querySelector('.carrossel-trilha');
-if (trilha) {
-    const cardsOriginais = Array.from(trilha.children);
-    cardsOriginais.forEach(card => {
-        const duble = card.cloneNode(true);
-        trilha.appendChild(duble);
+        /* Fecha com ESC */
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    }
+
+
+    /* =====================================================
+       SCROLL SUAVE PARA ÂNCORAS
+    ===================================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const header = document.querySelector(".site-header");
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            const targetPosition =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                20;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+        });
     });
-}
+});

@@ -1,0 +1,2088 @@
+/* =========================================================
+   PATRONUSNET BROWSER
+   navegador.css
+========================================================= */
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    --browser-blue: #2563eb;
+    --browser-blue-light: #38bdf8;
+    --browser-blue-dark: #1d4ed8;
+
+    --browser-cyan: #22d3ee;
+
+    --browser-bg: #050b16;
+    --browser-bg-light: #08111f;
+
+    --browser-card: rgba(10, 20, 35, 0.78);
+
+    --browser-border: rgba(148, 163, 184, 0.14);
+
+    --browser-text: #f8fafc;
+    --browser-muted: #94a3b8;
+
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.browser-hero {
+
+    position: relative;
+
+    min-height: min(860px, 100vh);
+
+    padding:
+        150px
+        max(6vw, 40px)
+        100px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(380px, 0.9fr);
+
+    align-items: center;
+
+    gap: clamp(35px, 6vw, 90px);
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(37, 99, 235, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(34, 211, 238, 0.07),
+            transparent 30%
+        ),
+        var(--browser-bg);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   HERO ORBS
+========================================================= */
+
+.browser-hero-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(4px);
+
+}
+
+
+.orb-blue {
+
+    width: 360px;
+    height: 360px;
+
+    right: 8%;
+    top: 15%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.18),
+            transparent 70%
+        );
+
+    animation: orbFloat 8s ease-in-out infinite;
+
+}
+
+
+.orb-cyan {
+
+    width: 260px;
+    height: 260px;
+
+    left: 5%;
+    bottom: 8%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.10),
+            transparent 70%
+        );
+
+    animation: orbFloat 10s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, -18px, 0);
+    }
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.browser-hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 680px;
+
+}
+
+
+.hero-kicker {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    color: var(--browser-blue-light);
+
+    font-size: 0.76rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.hero-kicker::before {
+
+    content: "";
+
+    width: 24px;
+    height: 1px;
+
+    background: var(--browser-blue-light);
+
+}
+
+
+.browser-hero h1 {
+
+    margin: 0;
+
+    max-width: 720px;
+
+    color: var(--browser-text);
+
+    font-size:
+        clamp(3rem, 6vw, 5.6rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 800;
+
+}
+
+
+.browser-hero h1 span {
+
+    display: block;
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.browser-hero-content > p {
+
+    max-width: 610px;
+
+    margin: 28px 0 0;
+
+    color: var(--browser-muted);
+
+    font-size:
+        clamp(1rem, 1.5vw, 1.15rem);
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PREÇO HERO
+========================================================= */
+
+.browser-hero-price {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px 16px;
+
+    margin-top: 27px;
+
+}
+
+
+.browser-hero-price span {
+
+    width: 100%;
+
+    color: #64748b;
+
+    font-size: 0.76rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 700;
+
+}
+
+
+.browser-hero-price strong {
+
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    line-height: 1;
+
+}
+
+
+.browser-hero-price small {
+
+    color: #64748b;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+}
+
+
+.hero-actions .btn {
+
+    min-height: 48px;
+
+}
+
+
+/* =========================================================
+   COMPATIBILIDADE HERO
+========================================================= */
+
+.browser-compatible {
+
+    margin-top: 25px;
+
+}
+
+
+.browser-compatible > span {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #64748b;
+
+    font-size: 0.76rem;
+
+}
+
+
+.browser-badges {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.browser-badges span {
+
+    padding: 7px 11px;
+
+    border: 1px solid var(--browser-border);
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: #94a3b8;
+
+    font-size: 0.72rem;
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+
+    position: relative;
+
+    width: min(100%, 560px);
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    perspective: 1200px;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   CARD FLUTUANTE
+========================================================= */
+
+.hero-card {
+
+    position: relative;
+
+    width: min(100%, 520px);
+
+    padding: 14px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.14),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 40px 90px rgba(0, 0, 0, 0.48),
+        0 12px 40px rgba(37, 99, 235, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    transform:
+        perspective(1200px)
+        rotateY(-7deg)
+        rotateX(3deg);
+
+    animation:
+        browserCardFloat
+        6s
+        ease-in-out
+        infinite;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   IMAGEM DO POPUP
+========================================================= */
+
+.hero-browser-popup {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 540px;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* =========================================================
+   BRILHO DO CARD
+========================================================= */
+
+.hero-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 70%;
+    height: 70%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        rgba(37, 99, 235, 0.17);
+
+    filter: blur(75px);
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+
+.hero-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -80%;
+
+    width: 45%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.10),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        browserCardShine
+        7s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes browserCardFloat {
+
+    0%,
+    100% {
+
+        transform:
+            perspective(1200px)
+            rotateY(-7deg)
+            rotateX(3deg)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            perspective(1200px)
+            rotateY(-7deg)
+            rotateX(3deg)
+            translateY(-12px);
+
+    }
+
+}
+
+
+@keyframes browserCardShine {
+
+    0% {
+        left: -80%;
+    }
+
+    25%,
+    100% {
+        left: 140%;
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.browser-hero .hero-scroll {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #64748b;
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.14em;
+
+}
+
+
+.browser-hero .hero-scroll div {
+
+    width: 1px;
+
+    height: 35px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--browser-blue-light),
+            transparent
+        );
+
+    animation:
+        scrollLine 2s ease-in-out infinite;
+
+}
+
+
+@keyframes scrollLine {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scaleY(0.65);
+        transform-origin: top;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.browser-intro {
+
+    padding:
+        clamp(90px, 12vw, 150px)
+        20px;
+
+    background: #07101d;
+
+}
+
+
+.browser-intro .section-inner {
+
+    max-width: 900px;
+
+}
+
+
+.browser-intro h2 {
+
+    max-width: 800px;
+
+    margin: 18px 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2.2rem, 5vw, 4.2rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+
+}
+
+
+.browser-intro h2 span {
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.browser-intro p {
+
+    max-width: 720px;
+
+    color: #94a3b8;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   RECURSOS
+========================================================= */
+
+.browser-resources {
+
+    padding:
+        clamp(90px, 10vw, 140px)
+        20px;
+
+    background: #050b16;
+
+}
+
+
+.browser-resources .section-heading {
+
+    max-width: 760px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.browser-resources .section-heading h2 {
+
+    margin: 15px 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2.1rem, 4vw, 3.7rem);
+
+    line-height: 1.05;
+
+}
+
+
+.browser-resources .section-heading h2 span {
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.browser-resources .section-heading p {
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   RESOURCE GRID
+========================================================= */
+
+.resources-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+
+.resource-card {
+
+    position: relative;
+
+    min-height: 270px;
+
+    padding: 28px;
+
+    border: 1px solid var(--browser-border);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 30, 50, 0.85),
+            rgba(7, 15, 27, 0.85)
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.resource-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(56, 189, 248, 0.32);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.22);
+
+}
+
+
+.resource-number {
+
+    position: absolute;
+
+    top: 18px;
+    right: 22px;
+
+    color: rgba(148, 163, 184, 0.25);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+}
+
+
+.resource-icon {
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(37, 99, 235, 0.10);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.14);
+
+    color: var(--browser-blue-light);
+
+    font-size: 1.15rem;
+
+}
+
+
+.resource-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #f8fafc;
+
+    font-size: 1.1rem;
+
+}
+
+
+.resource-card p {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+    font-size: 0.92rem;
+
+}
+
+
+/* =========================================================
+   TECNOLOGIA
+========================================================= */
+
+.technology-section {
+
+    padding:
+        clamp(90px, 10vw, 140px)
+        20px;
+
+    background: #07101d;
+
+}
+
+
+.technology-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(320px, 0.8fr);
+
+    gap: clamp(40px, 7vw, 100px);
+
+    align-items: center;
+
+}
+
+
+.technology-content h2 {
+
+    max-width: 650px;
+
+    margin: 18px 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2.1rem, 4vw, 3.7rem);
+
+    line-height: 1.05;
+
+}
+
+
+.technology-content h2 span {
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.technology-content > p {
+
+    max-width: 650px;
+
+    color: #94a3b8;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   TECHNOLOGY LIST
+========================================================= */
+
+.technology-list {
+
+    margin-top: 35px;
+
+    display: grid;
+
+    gap: 12px;
+
+}
+
+
+.technology-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 17px;
+
+    border:
+        1px solid var(--browser-border);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+}
+
+
+.technology-item > span {
+
+    color: var(--browser-blue-light);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+}
+
+
+.technology-item strong {
+
+    display: block;
+
+    color: #f8fafc;
+
+    margin-bottom: 5px;
+
+}
+
+
+.technology-item p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 0.85rem;
+
+    line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   TECHNOLOGY PANEL
+========================================================= */
+
+.technology-panel {
+
+    position: relative;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c1a2b,
+            #050b16
+        );
+
+    border:
+        1px solid var(--browser-border);
+
+    box-shadow:
+        0 35px 70px rgba(0, 0, 0, 0.25);
+
+}
+
+
+.tech-panel-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 16px;
+
+    border-bottom:
+        1px solid var(--browser-border);
+
+    color: #94a3b8;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.tech-status {
+
+    color: #34d399;
+
+}
+
+
+.tech-panel-content {
+
+    padding-top: 12px;
+
+}
+
+
+.tech-code-line {
+
+    display: grid;
+
+    grid-template-columns:
+        35px 1fr auto;
+
+    gap: 10px;
+
+    padding: 14px 5px;
+
+    border-bottom:
+        1px solid rgba(148, 163, 184, 0.06);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 0.8rem;
+
+}
+
+
+.tech-code-line span:first-child {
+
+    color: #475569;
+
+}
+
+
+.tech-code-line span:nth-child(2) {
+
+    color: #7dd3fc;
+
+}
+
+
+.tech-code-line strong {
+
+    color: #34d399;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-section {
+
+    padding:
+        clamp(90px, 10vw, 140px)
+        20px;
+
+    background: #050b16;
+
+}
+
+
+.video-section .section-heading {
+
+    max-width: 750px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.video-section h2 {
+
+    margin: 15px 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2.1rem, 4vw, 3.7rem);
+
+    line-height: 1.05;
+
+}
+
+
+.video-section h2 span {
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.video-section .section-heading p {
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+}
+
+
+.video-wrapper {
+
+    position: relative;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 10px;
+
+    border:
+        1px solid var(--browser-border);
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.30);
+
+}
+
+
+.extension-video {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 600px;
+
+    border-radius: 17px;
+
+    background: #020617;
+
+}
+
+
+/* =========================================================
+   SEGURANÇA
+========================================================= */
+
+.security-section {
+
+    padding:
+        clamp(90px, 10vw, 140px)
+        20px;
+
+    background: #07101d;
+
+}
+
+
+.security-card {
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 30px;
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: clamp(30px, 5vw, 55px);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.13);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 30, 48, 0.90),
+            rgba(7, 15, 27, 0.90)
+        );
+
+}
+
+
+.security-icon {
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        rgba(37, 99, 235, 0.12);
+
+    border:
+        1px solid rgba(56, 189, 248, 0.15);
+
+    color: var(--browser-blue-light);
+
+    font-size: 1.5rem;
+
+}
+
+
+.security-content h2 {
+
+    margin: 15px 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2rem, 4vw, 3.3rem);
+
+    line-height: 1.05;
+
+}
+
+
+.security-content h2 span {
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.security-content > p {
+
+    max-width: 750px;
+
+    color: #94a3b8;
+
+    line-height: 1.8;
+
+}
+
+
+.security-points {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 25px;
+
+}
+
+
+.security-points span {
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(52, 211, 153, 0.07);
+
+    border:
+        1px solid rgba(52, 211, 153, 0.12);
+
+    color: #86efac;
+
+    font-size: 0.78rem;
+
+}
+
+
+/* =========================================================
+   COMPATIBILIDADE
+========================================================= */
+
+.compatibility-section {
+
+    padding:
+        clamp(90px, 10vw, 140px)
+        20px;
+
+    background: #050b16;
+
+}
+
+
+.compatibility-section .section-heading {
+
+    max-width: 750px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.compatibility-section h2 {
+
+    margin: 15px 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2.1rem, 4vw, 3.7rem);
+
+    line-height: 1.05;
+
+}
+
+
+.compatibility-section h2 span {
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.compatibility-section .section-heading p {
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+}
+
+
+.compatibility-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+
+.compatibility-card {
+
+    padding: 30px;
+
+    border:
+        1px solid var(--browser-border);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+}
+
+
+.compatibility-logo {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(37, 99, 235, 0.13);
+
+    color: #60a5fa;
+
+    font-size: 1.5rem;
+
+    font-weight: 800;
+
+}
+
+
+.compatibility-logo.edge {
+
+    background:
+        rgba(34, 197, 94, 0.10);
+
+    color: #4ade80;
+
+}
+
+
+.compatibility-logo.chromium {
+
+    background:
+        rgba(34, 211, 238, 0.10);
+
+    color: #22d3ee;
+
+}
+
+
+.compatibility-card h3 {
+
+    margin: 0 0 10px;
+
+    color: #f8fafc;
+
+}
+
+
+.compatibility-card p {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+
+}
+
+
+/* =========================================================
+   PURCHASE
+========================================================= */
+
+.purchase-section {
+
+    position: relative;
+
+    padding:
+        clamp(100px, 12vw, 170px)
+        20px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(37, 99, 235, 0.16),
+            transparent 45%
+        ),
+        #07101d;
+
+}
+
+
+.purchase-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    margin: auto;
+
+}
+
+
+.purchase-content h2 {
+
+    margin: 18px auto;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(2.3rem, 5vw, 4.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+}
+
+
+.purchase-content h2 span {
+
+    display: block;
+
+    color: var(--browser-blue-light);
+
+}
+
+
+.purchase-content > p {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   PURCHASE PRICE
+========================================================= */
+
+.purchase-price {
+
+    margin: 30px 0;
+
+}
+
+
+.purchase-price small {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #64748b;
+
+    font-size: 0.76rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+.purchase-price strong {
+
+    color: #ffffff;
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   PURCHASE BUTTONS
+========================================================= */
+
+.purchase-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+
+.purchase-buttons .btn {
+
+    min-width: 190px;
+
+}
+
+
+.purchase-note {
+
+    display: block;
+
+    max-width: 520px;
+
+    margin: 20px auto 0;
+
+    color: #475569;
+
+    font-size: 0.76rem;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+
+    .browser-hero {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(320px, 0.8fr);
+
+        gap: 35px;
+
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+    }
+
+
+    .browser-hero h1 {
+
+        font-size:
+            clamp(2.8rem, 6vw, 4.5rem);
+
+    }
+
+
+    .resources-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .compatibility-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+
+    .browser-hero {
+
+        min-height: auto;
+
+        padding:
+            125px
+            20px
+            100px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 45px;
+
+    }
+
+
+    .browser-hero-content {
+
+        width: 100%;
+
+        max-width: none;
+
+        text-align: left;
+
+    }
+
+
+    .browser-hero h1 {
+
+        font-size:
+            clamp(2.7rem, 13vw, 4rem);
+
+    }
+
+
+    .browser-hero-content > p {
+
+        font-size: 0.98rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    .hero-actions {
+
+        width: 100%;
+
+    }
+
+
+    .hero-actions .btn {
+
+        flex: 1;
+
+        min-width: 150px;
+
+        text-align: center;
+
+    }
+
+
+    .hero-visual {
+
+        width: min(94vw, 500px);
+
+        margin: 0 auto;
+
+    }
+
+
+    .hero-card {
+
+        width: 100%;
+
+        padding: 9px;
+
+        border-radius: 19px;
+
+        transform:
+            perspective(1000px)
+            rotateY(-3deg)
+            rotateX(2deg);
+
+    }
+
+
+    .hero-browser-popup {
+
+        border-radius: 12px;
+
+    }
+
+
+    @keyframes browserCardFloat {
+
+        0%,
+        100% {
+
+            transform:
+                perspective(1000px)
+                rotateY(-3deg)
+                rotateX(2deg)
+                translateY(0);
+
+        }
+
+        50% {
+
+            transform:
+                perspective(1000px)
+                rotateY(-3deg)
+                rotateX(2deg)
+                translateY(-7px);
+
+        }
+
+    }
+
+
+    .browser-hero .hero-scroll {
+
+        display: none;
+
+    }
+
+
+    .browser-compatible {
+
+        margin-top: 20px;
+
+    }
+
+
+    .resources-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .resource-card {
+
+        min-height: auto;
+
+    }
+
+
+    .technology-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .technology-panel {
+
+        margin-top: 5px;
+
+    }
+
+
+    .security-card {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .compatibility-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .purchase-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .purchase-buttons .btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+
+    .browser-hero {
+
+        padding-top: 110px;
+
+    }
+
+
+    .browser-hero h1 {
+
+        font-size: 2.65rem;
+
+    }
+
+
+    .browser-hero-price strong {
+
+        font-size: 1.75rem;
+
+    }
+
+
+    .hero-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .hero-actions .btn {
+
+        width: 100%;
+
+    }
+
+
+    .browser-badges {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .browser-badges span {
+
+        width: fit-content;
+
+    }
+
+
+    .hero-card {
+
+        padding: 6px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .hero-browser-popup {
+
+        border-radius: 10px;
+
+    }
+
+
+    .browser-intro,
+    .browser-resources,
+    .technology-section,
+    .video-section,
+    .security-section,
+    .compatibility-section {
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+    }
+
+
+    .security-points {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .purchase-price strong {
+
+        font-size: 2.5rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    .browser-hero-orb,
+    .hero-card,
+    .hero-card::after,
+    .browser-hero .hero-scroll div {
+
+        animation: none !important;
+
+    }
+
+
+    .resource-card {
+
+        transition: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO / LOGO — consistência entre as abas
+   (navegador.html e como-funciona.html usam este arquivo)
+========================================================= */
+
+/* Mantém o "Net" da logo na mesma cor azul usada nas demais páginas,
+   em vez de cair no cinza padrão do style.css global. */
+.logo-txt > span > span {
+    color: var(--browser-blue-light);
+}
+
+/* Estado ativo do item de menu com o mesmo azul da marca. */
+.nav-links a.active {
+    color: var(--browser-blue-light);
+    background: rgba(56, 189, 248, 0.10);
+}
+
+/* O botão de Download (CTA) mantém o visual claro mesmo quando ativo. */
+.nav-links a.nav-cta.active {
+    color: #080a0c;
+    background: #fff;
+}

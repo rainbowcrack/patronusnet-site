@@ -1,71 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PatronusNet: proteção inteligente e monitoramento de atividades online. Bloqueie domínios, filtre conteúdos e configure DNS de forma centralizada.">
-    <meta name="keywords" content="proteção digital, bloqueio de domínios, controle parental, DNS, monitoramento de rede">
+
+    <meta
+        name="description"
+        content="PatronusNet: extensão de navegador Chromium para controle parental por domínio e palavras-chave, com processamento local."
+    >
+
+    <meta
+        name="keywords"
+        content="PatronusNet, extensão, controle parental, Chrome, Edge, Chromium, bloqueio de sites, proteção digital"
+    >
+
     <meta name="author" content="PatronusNet">
-    <meta property="og:title" content="PatronusNet - Proteção Digital Inteligente">
-    <meta property="og:description" content="Monitore e controle as atividades online de todos os seus dispositivos com segurança e facilidade.">
+
+    <meta property="og:title" content="PatronusNet | Extensão de Proteção Digital">
+    <meta property="og:description" content="Controle parental por domínio e palavras-chave, direto no seu navegador.">
     <meta property="og:type" content="website">
-    <title>Home | PatronusNet</title>
+
+    <title>PatronusNet | Extensão de Proteção Digital</title>
+
     <link rel="shortcut icon" href="assets/img/favi-icon.png" type="image/png">
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/navegador.css">
 </head>
+
 <body>
 
-    <canvas id="canvas-grafos"></canvas>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-    <header>
-        <nav class="nav-container">
-            <a href="index.html" class="logo-txt">
-                <img src="assets/img/favi-icon.png" alt="PatronusNet Ícone" class="logo-icon">
-                PatronusNet
+    <header class="site-header">
+        <nav class="nav-container" aria-label="Navegação principal">
+
+            <a href="index.html" class="logo-txt" aria-label="PatronusNet - Página inicial">
+                <img src="assets/img/favi-icon.png" alt="" class="logo-icon">
+                <span>Patronus<span>Net</span></span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="main-navigation">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="como-funciona.html">Como Funciona</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="navegador.html" class="nav-cta">Download</a></li>
             </ul>
+
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <img src="assets/img/logo.png" alt="Patronus Logo" class="logo-img">
-            <h1>PatronusNet</h1>
-            <p>Assim como o urso protege seu filhote, o PatronusNet acompanha e monitora as atividades online dos dispositivos, promovendo um ambiente digital mais seguro, responsável e sob controle.</p>
-        </section>
 
-        <section class="carrossel-container">
-            <div class="carrossel-trilha">
-                <div class="card card-carrossel">
-                    <img src="assets/img/cards/roteador.png" alt="Navegação Guiada do Roteador">
-                    <h3>Navegação Guiada do Roteador</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Assistente passo a passo para acessar o roteador em 192.168.1.1 e configurar DNS e proteção de rede, aplicando regras automaticamente a todos os dispositivos conectados.</p>
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="browser-hero">
+
+            <div class="browser-hero-orb orb-blue"></div>
+            <div class="browser-hero-orb orb-cyan"></div>
+
+            <div class="browser-hero-content">
+
+                <span class="hero-kicker">EXTENSÃO PATRONUSNET</span>
+
+                <h1>
+                    Controle parental
+                    <span>direto no navegador.</span>
+                </h1>
+
+                <p>
+                    PatronusNet é uma extensão para navegadores Chromium
+                    que aplica controle parental por domínio e por palavras-chave,
+                    com processamento local e configuração simples.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="navegador.html#download" class="btn btn-primary">
+                        Baixar extensão
+                    </a>
+
+                    <a href="como-funciona.html" class="btn btn-secondary">
+                        Como funciona
+                    </a>
                 </div>
-                <div class="card card-carrossel">
-                    <img src="assets/img/cards/dashboard.png" alt="Dashboard de Proteção">
-                    <h3>Dashboard de Proteção</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Visão geral dos últimos 7 dias de proteção, com bloqueios totais, domínios e tags ativos, calendário semanal e histórico de pesquisa, inclusive em guias anônimas.</p>
+
+                <div class="browser-compatible">
+                    <span>Compatível com navegadores Chromium</span>
+
+                    <div class="browser-badges">
+                        <span>Chrome</span>
+                        <span>Microsoft Edge</span>
+                        <span>Outros Chromium</span>
+                    </div>
                 </div>
-                <div class="card card-carrossel">
-                    <img src="assets/img/cards/tag.png" alt="Filtro por Tags de Conteúdo">
-                    <h3>Filtro por Tags de Conteúdo</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Bloqueia páginas, vídeos e pesquisas com base em palavras-chave configuradas previamente, garantindo controle sobre o conteúdo acessado.</p>
-                </div>
-                <div class="card card-carrossel">
-                    <img src="assets/img/cards/dominio.png" alt="Bloqueio de Domínios e Blacklists">
-                    <h3>Bloqueio de Domínios e Blacklists</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Bloqueia sites e domínios configurados pelo usuário e também aplica listas de bloqueio já definidas para impedir o acesso a endereços indesejados.</p>
-                </div>
-                <div class="card card-carrossel">
-                    <img src="assets/img/cards/senha.png" alt="Proteção por Senha">
-                    <h3>Proteção por Senha</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Configuração de senha para a extensão, garantindo que apenas usuários autorizados possam alterar regras, agendamentos e configurações de proteção.</p>
+
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <img
+                        src="assets/img/browser/popup.png"
+                        alt="Interface do popup da extensão PatronusNet"
+                        class="hero-browser-popup"
+                    >
                 </div>
             </div>
         </section>
@@ -74,126 +129,229 @@
             <h2>Comece a Proteger sua Rede Agora</h2>
             <p>PatronusNet é grátis e fácil de instalar. Configure a proteção em poucos minutos.</p>
             <div class="cta-buttons">
-                <a href="produto.html#planos" class="btn btn-primary">Baixar Extensão</a>
+                <a href="produto.html" class="btn btn-primary">Baixar Extensão</a>
                 <a href="sobre-nos.html" class="btn btn-secondary">Conheça a Equipe</a>
             </div>
+
         </section>
 
-        <section class="como-funciona">
-            <h2 class="titulo-secao">Como Funciona</h2>
-            <div class="funciona-grid">
-                <div class="funciona-item">
-                    <div class="funciona-numero">01</div>
-                    <h3>Instale a Extensão</h3>
-                    <p>Baixe e instale o PatronusNet no seu navegador Chrome. O processo leva menos de 2 minutos.</p>
+        <!-- =====================================================
+             INTRO
+        ====================================================== -->
+
+        <section class="browser-intro">
+            <div class="section-inner">
+                <span class="section-label">PATRONUSNET</span>
+
+                <h2>
+                    Proteção aplicada
+                    <span>durante a navegação.</span>
+                </h2>
+
+                <p>
+                    A extensão adiciona uma camada de controle ao navegador:
+                    você define os domínios e as palavras-chave que devem ser
+                    bloqueados e a extensão aplica essas regras durante a
+                    navegação, tudo com prioridade para o processamento local.
+                </p>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             RECURSOS
+        ====================================================== -->
+
+        <section class="browser-resources" id="recursos">
+            <div class="section-inner">
+
+                <div class="section-heading">
+                    <span class="section-label">RECURSOS</span>
+
+                    <h2>
+                        Controle pensado
+                        <span>para o seu dia a dia.</span>
+                    </h2>
+
+                    <p>
+                        Recursos desenvolvidos para facilitar a configuração
+                        das políticas de proteção da extensão PatronusNet.
+                    </p>
                 </div>
-                <div class="funciona-item">
-                    <div class="funciona-numero">02</div>
-                    <h3>Configure Proteções</h3>
-                    <p>Defina bloqueios de domínios, filtros de conteúdo por tags e regras de agendamento conforme sua necessidade.</p>
-                </div>
-                <div class="funciona-item">
-                    <div class="funciona-numero">03</div>
-                    <h3>Monitore Atividades</h3>
-                    <p>Acompanhe bloqueios em tempo real, visualize relatórios dos últimos 7 dias e mantenha histórico de pesquisa.</p>
-                </div>
-                <div class="funciona-item">
-                    <div class="funciona-numero">04</div>
-                    <h3>Configure Roteador</h3>
-                    <p>Use a navegação guiada para configurar DNS no roteador e aplicar proteção automaticamente a todos os dispositivos.</p>
+
+                <div class="resources-grid">
+
+                    <article class="resource-card">
+                        <div class="resource-number">01</div>
+                        <div class="resource-icon">◈</div>
+                        <h3>Bloqueio por domínio</h3>
+                        <p>
+                            Defina os domínios que devem ser bloqueados e
+                            mantenha suas políticas de acesso sempre ativas.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">02</div>
+                        <div class="resource-icon">🏷️</div>
+                        <h3>Bloqueio por palavras-chave</h3>
+                        <p>
+                            Cadastre palavras (tags) e a extensão bloqueia páginas
+                            cujo texto ou endereço contenha esses termos.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">03</div>
+                        <div class="resource-icon">◷</div>
+                        <h3>Agendamento</h3>
+                        <p>
+                            Defina os dias da semana e o horário em que a proteção
+                            deve ser ativada automaticamente.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">04</div>
+                        <div class="resource-icon">🔑</div>
+                        <h3>Senha parental</h3>
+                        <p>
+                            Proteja as configurações e o desbloqueio de páginas com
+                            uma senha, evitando alterações não autorizadas.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">05</div>
+                        <div class="resource-icon">📊</div>
+                        <h3>Histórico e dashboard</h3>
+                        <p>
+                            Acompanhe os bloqueios recentes e veja um panorama da
+                            proteção dos últimos dias, com exportação em CSV.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">06</div>
+                        <div class="resource-icon">🔧</div>
+                        <h3>Guia do roteador</h3>
+                        <p>
+                            Um assistente visual ajuda a configurar o DNS de
+                            proteção direto no painel do seu roteador.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">07</div>
+                        <div class="resource-icon">🤖</div>
+                        <h3>IA local (beta)</h3>
+                        <p>
+                            Um classificador de conteúdo roda 100% no seu
+                            navegador e oculta trechos com possível discurso de
+                            ódio em fóruns e notícias, sem enviar o texto das
+                            páginas para servidores externos.
+                        </p>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="resource-number">08</div>
+                        <div class="resource-icon">🕵️</div>
+                        <h3>Modo furtivo</h3>
+                        <p>
+                            Bloqueia sem exibir a tela do PatronusNet e registra
+                            localmente as páginas visitadas, para acompanhamento
+                            discreto do ambiente.
+                        </p>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section class="beneficios">
-            <h2 class="titulo-secao">Por Que Escolher PatronusNet?</h2>
-            <div class="beneficios-grid">
-                <div class="beneficio-item">
-                    <span class="beneficio-icon">1.</span>
-                    <h3>Proteção Completa</h3>
-                    <p>Bloqueio inteligente de domínios, conteúdos inadequados e sites da blacklist.</p>
+        <!-- =====================================================
+             CTA / DOWNLOAD
+        ====================================================== -->
+
+        <section class="purchase-section" id="download">
+            <div class="purchase-content">
+                <span class="section-label">PATRONUSNET BROWSER</span>
+
+                <h2>
+                    Instale a extensão
+                    <span>e comece a proteger.</span>
+                </h2>
+
+                <p>
+                    Baixe a versão 3.4 do PatronusNet e instale no seu navegador
+                    Chromium. O download é gratuito.
+                </p>
+
+                <div class="purchase-buttons">
+                    <a href="code/patronusnet-browser-v3.4.zip" class="btn btn-primary" download>
+                        Baixar extensão (v3.4)
+                    </a>
+
+                    <a href="navegador.html#download" class="btn btn-secondary">
+                        Ver instruções
+                    </a>
                 </div>
-                <div class="beneficio-item">
-                    <span class="beneficio-icon">2.</span>
-                    <h3>Dashboard Intuitivo</h3>
-                    <p>Visualize estatísticas detalhadas, bloqueios totais e atividades da semana em um único lugar.</p>
-                </div>
-                <div class="beneficio-item">
-                    <span class="beneficio-icon">3.</span>
-                    <h3>Fácil de Configurar</h3>
-                    <p>Navegação guiada passo a passo, sem conhecimento técnico necessário.</p>
-                </div>
-                <div class="beneficio-item">
-                    <span class="beneficio-icon">4.</span>
-                    <h3>Seguro e Privado</h3>
-                    <p>Proteção com senha, histórico seguro e controle total sobre seus dados.</p>
-                </div>
-                <div class="beneficio-item">
-                    <span class="beneficio-icon">5.</span>
-                    <h3>Proteção em Rede</h3>
-                    <p>Configure DNS global no roteador e proteja todos os dispositivos automaticamente.</p>
-                </div>
-                <div class="beneficio-item">
-                    <span class="beneficio-icon">6.</span>
-                    <h3>100% Gratuito</h3>
-                    <p>Acesso completo a todos os recursos sem custos ocultos ou limite de uso.</p>
-                </div>
+
+                <small class="purchase-note">
+                    Compatível com Google Chrome, Microsoft Edge e outros
+                    navegadores baseados em Chromium.
+                </small>
             </div>
         </section>
 
-        <section class="requisitos">
-            <h2 class="titulo-secao">Requisitos do Sistema</h2>
-            <div class="requisitos-content">
-                <div class="requisito-bloco">
-                    <h3>Para a Extensão</h3>
-                    <ul>
-                        <li>✓ Google Chrome versão 90+</li>
-                        <li>✓ Windows, macOS ou Linux</li>
-                        <li>✓ Conexão com Internet</li>
-                        <li>✓ Permissões de leitura de requisições HTTP/HTTPS</li>
-                    </ul>
-                </div>
-                <div class="requisito-bloco">
-                    <h3>Para Proteção de Rede</h3>
-                    <ul>
-                        <li>✓ Roteador com acesso 192.168.1.1</li>
-                        <li>✓ Acesso à interface de administração do roteador</li>
-                        <li>✓ Suporte a configuração de DNS customizado</li>
-                        <li>✓ Todos os dispositivos na mesma rede</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
     </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer>
         <div class="footer-content">
+
             <div class="footer-section">
                 <h4>PatronusNet</h4>
-                <p>Proteção digital inteligente para sua rede e dispositivos.</p>
+                <p>
+                    Extensão de navegador para controle parental por
+                    domínio e palavras-chave.
+                </p>
             </div>
+
             <div class="footer-section">
-                <h4>Links Rápidos</h4>
+                <h4>Extensão</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="como-funciona.html">Como funciona</a></li>
+                    <li><a href="navegador.html#download">Download</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Institucional</h4>
+                <ul>
                     <li><a href="sobre-nos.html">Sobre Nós</a></li>
-                    <li><a href="produto.html">Produtos</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Redes Sociais</h4>
-                <ul>
-                    <li><a href="https://github.com/rainbowcrack/patronusnet-site" target="_blank" rel="noreferrer">GitHub</a></li>
-                </ul>
-            </div>
+
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; <span id="ano"></span> PatronusNet. Todos os direitos reservados.</p>
-            <p>Projeto desenvolvido como trabalho acadêmico na PUC Minas.</p>
+            <p>
+                &copy;
+                <span id="ano"></span>
+                PatronusNet.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Projeto desenvolvido como trabalho acadêmico na PUC Minas.
+            </p>
         </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
-    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+
 </body>
+
 </html>
