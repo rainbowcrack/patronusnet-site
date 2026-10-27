@@ -1524,6 +1524,9 @@ body {
 
     position: relative;
 
+    /* Compensa a navbar fixa quando chega via âncora #download. */
+    scroll-margin-top: 90px;
+
     padding:
         clamp(100px, 12vw, 170px)
         20px;
